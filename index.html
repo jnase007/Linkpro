@@ -177,38 +177,156 @@ ul { list-style: none; }
    ═══════════════════════════════════════════════ */
 .hero {
   position: relative; min-height: 100vh; display: flex; align-items: center;
-  background: var(--charcoal); overflow: hidden;
+  background: #0a0a0a; overflow: hidden;
 }
 .hero__bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(196, 162, 101, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(196, 162, 101, 0.04) 0%, transparent 50%),
-    linear-gradient(135deg, #1A1A1A 0%, #222 40%, #1A1A1A 100%);
+    radial-gradient(ellipse 80% 60% at 65% 40%, rgba(196, 162, 101, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at 20% 80%, rgba(196, 162, 101, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(168, 137, 79, 0.06) 0%, transparent 50%),
+    linear-gradient(160deg, #0a0a0a 0%, #151515 30%, #0f0f0f 60%, #0a0a0a 100%);
   z-index: 0;
+}
+/* Animated gradient orbs */
+.hero__orb {
+  position: absolute; border-radius: 50%; z-index: 1;
+  filter: blur(80px);
+  animation: orbFloat 12s ease-in-out infinite;
+}
+.hero__orb--1 {
+  width: 500px; height: 500px;
+  top: -10%; right: 10%;
+  background: radial-gradient(circle, rgba(196,162,101,0.18) 0%, transparent 65%);
+  animation-delay: 0s;
+}
+.hero__orb--2 {
+  width: 400px; height: 400px;
+  bottom: 0%; left: 15%;
+  background: radial-gradient(circle, rgba(196,162,101,0.1) 0%, transparent 65%);
+  animation-delay: -4s;
+  animation-duration: 16s;
+}
+.hero__orb--3 {
+  width: 300px; height: 300px;
+  top: 35%; right: 25%;
+  background: radial-gradient(circle, rgba(168,137,79,0.12) 0%, transparent 65%);
+  animation-delay: -8s;
+  animation-duration: 20s;
+}
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -20px) scale(1.05); }
+  50% { transform: translate(-20px, 15px) scale(0.95); }
+  75% { transform: translate(15px, 25px) scale(1.02); }
+}
+/* Film grain */
+.hero__grain {
+  position: absolute; inset: 0; z-index: 2; opacity: 0.035; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 }
 /* Subtle grid overlay */
 .hero__grid {
-  position: absolute; inset: 0; z-index: 1; opacity: 0.03;
+  position: absolute; inset: 0; z-index: 2; opacity: 0.025;
   background-image:
-    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
   background-size: 80px 80px;
 }
-/* Geometric accent */
+/* Hero accent — abstract human form */
 .hero__accent {
-  position: absolute; right: -5%; top: 15%; z-index: 1;
-  width: 500px; height: 500px; opacity: 0.04;
-  border: 1px solid var(--gold);
-  transform: rotate(45deg);
+  position: absolute; right: 2%; top: 50%; z-index: 2;
+  transform: translateY(-50%);
+  width: 480px; height: 700px;
+  opacity: 0;
+  animation: heroAccentIn 2s ease 0.5s forwards;
 }
-.hero__accent::before {
-  content: ''; position: absolute;
-  top: 40px; left: 40px; right: 40px; bottom: 40px;
-  border: 1px solid var(--gold);
+@keyframes heroAccentIn {
+  from { opacity: 0; transform: translateY(-48%) scale(0.95); }
+  to { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+.hero__accent svg { width: 100%; height: 100%; overflow: visible; }
+/* Main body contour */
+.accent-body {
+  fill: none; stroke: rgba(196,162,101,0.3); stroke-width: 1; stroke-linecap: round;
+  stroke-dasharray: 1200; stroke-dashoffset: 1200;
+  animation: drawSlow 3.5s ease 0.6s forwards;
+}
+.accent-body-r {
+  fill: none; stroke: rgba(196,162,101,0.25); stroke-width: 1; stroke-linecap: round;
+  stroke-dasharray: 1200; stroke-dashoffset: 1200;
+  animation: drawSlow 3.5s ease 0.8s forwards;
+}
+/* Inner structure lines */
+.accent-spine {
+  fill: none; stroke: rgba(196,162,101,0.5); stroke-width: 1.5; stroke-linecap: round;
+  stroke-dasharray: 600; stroke-dashoffset: 600;
+  animation: drawSlow 2.5s ease 1.2s forwards;
+}
+.accent-pelvis {
+  fill: none; stroke: rgba(196,162,101,0.6); stroke-width: 2; stroke-linecap: round;
+  stroke-dasharray: 300; stroke-dashoffset: 300;
+  animation: drawSlow 2s ease 2s forwards;
+}
+.accent-pelvis-glow {
+  fill: rgba(196,162,101,0.06); stroke: none;
+  opacity: 0;
+  animation: glowIn 2s ease 2.8s forwards;
+}
+.accent-joints {
+  fill: rgba(196,162,101,0.4); stroke: none;
+  opacity: 0;
+  animation: dotIn 0.6s ease forwards;
+}
+.accent-fascia {
+  fill: none; stroke: rgba(196,162,101,0.08); stroke-width: 0.5;
+  stroke-dasharray: 4 6;
+  opacity: 0;
+  animation: fadeIn2 1.5s ease 3s forwards;
+}
+.accent-glow-dot {
+  fill: var(--gold); opacity: 0;
+  animation: accentPulse 3s ease-in-out 2.8s infinite;
+}
+.accent-ring {
+  fill: none; stroke: rgba(196,162,101,0.3); stroke-width: 0.8;
+  opacity: 0;
+  animation: ringExpand 3s ease-in-out 2.8s infinite;
+}
+@keyframes drawSlow {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes glowIn {
+  to { opacity: 1; }
+}
+@keyframes dotIn {
+  to { opacity: 1; }
+}
+@keyframes fadeIn2 {
+  to { opacity: 1; }
+}
+@keyframes accentPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+@keyframes ringExpand {
+  0% { opacity: 0.3; transform-origin: center; transform: scale(1); }
+  70% { opacity: 0; transform: scale(2.5); }
+  100% { opacity: 0; transform: scale(2.5); }
+}
+/* Horizontal gold line accent */
+.hero__line {
+  position: absolute; bottom: 30%; left: 0; z-index: 2;
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(196,162,101,0.15) 20%, rgba(196,162,101,0.08) 50%, transparent 100%);
+  opacity: 0; animation: lineIn 2s ease 1.5s forwards;
+}
+@keyframes lineIn {
+  from { opacity: 0; transform: scaleX(0); transform-origin: left; }
+  to { opacity: 1; transform: scaleX(1); transform-origin: left; }
 }
 .hero__content {
-  position: relative; z-index: 2;
+  position: relative; z-index: 3;
   max-width: 1440px; margin: 0 auto;
   padding: 0 var(--side-pad);
   padding-top: 140px; padding-bottom: 80px;
@@ -226,7 +344,7 @@ ul { list-style: none; }
 }
 .hero__title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(3.2rem, 8vw, 7.5rem);
+  font-size: clamp(3.5rem, 9vw, 8.5rem);
   font-weight: 400; line-height: 0.95;
   color: var(--white); margin-bottom: 36px;
   opacity: 0; transform: translateY(30px);
@@ -1006,8 +1124,101 @@ ul { list-style: none; }
      ═══════════════════════════════════════════════ -->
 <section class="hero" id="hero">
   <div class="hero__bg"></div>
+  <div class="hero__orb hero__orb--1"></div>
+  <div class="hero__orb hero__orb--2"></div>
+  <div class="hero__orb hero__orb--3"></div>
+  <div class="hero__grain"></div>
   <div class="hero__grid"></div>
-  <div class="hero__accent"></div>
+  <div class="hero__accent">
+    <svg viewBox="0 0 260 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="pelvisGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#C4A265" stop-opacity="0.15" />
+          <stop offset="50%" stop-color="#C4A265" stop-opacity="0.05" />
+          <stop offset="100%" stop-color="#C4A265" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="bodyAnchor" cx="50%" cy="45%" r="55%">
+          <stop offset="0%" stop-color="#C4A265" stop-opacity="0.04" />
+          <stop offset="100%" stop-color="#C4A265" stop-opacity="0" />
+        </radialGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+      
+      <!-- Anchor glow behind figure -->
+      <ellipse cx="130" cy="195" rx="110" ry="160" fill="url(#bodyAnchor)" />
+      
+      <!-- Head -->
+      <ellipse class="accent-body" cx="130" cy="28" rx="14" ry="17" />
+      
+      <!-- Neck -->
+      <path class="accent-body" d="M122,44 C122,50 120,55 118,60" />
+      <path class="accent-body-r" d="M138,44 C138,50 140,55 142,60" />
+      
+      <!-- Shoulders + Arms (wider, more athletic) -->
+      <path class="accent-body" d="M118,60 C108,62 92,66 80,75 C72,80 68,88 65,100" />
+      <path class="accent-body-r" d="M142,60 C152,62 168,66 180,75 C188,80 192,88 195,100" />
+      
+      <!-- Torso right contour -->
+      <path class="accent-body" d="M142,65 C148,80 150,95 150,110 C150,125 148,140 146,155 C145,165 148,175 155,185 C162,195 168,205 168,215" />
+      <!-- Torso left contour -->
+      <path class="accent-body-r" d="M118,65 C112,80 110,95 110,110 C110,125 112,140 114,155 C115,165 112,175 105,185 C98,195 92,205 92,215" />
+      
+      <!-- Spine (bold central line) -->
+      <path class="accent-spine" d="M130,44 C129,60 128,80 129,100 C130,120 131,140 130,160 C129,175 129,190 130,210" />
+      
+      <!-- Pelvis glow orb -->
+      <ellipse cx="130" cy="210" rx="50" ry="35" fill="url(#pelvisGlow)" />
+      
+      <!-- Pelvis structure (bold, unmistakable) -->
+      <path class="accent-pelvis-glow" d="M85,200 Q100,185 130,183 Q160,185 175,200 Q170,225 155,238 Q142,247 130,250 Q118,247 105,238 Q90,225 85,200Z" />
+      <path class="accent-pelvis" d="M82,200 Q100,180 130,178 Q160,180 178,200" />
+      <path class="accent-pelvis" d="M85,205 Q100,232 115,244 Q130,252 145,244 Q160,232 175,205" />
+      
+      <!-- Legs -->
+      <path class="accent-body" d="M155,238 C160,255 162,275 158,295 C155,310 150,325 148,345 C147,355 148,365 150,375" />
+      <path class="accent-body-r" d="M105,238 C100,255 98,275 102,295 C105,310 110,325 112,345 C113,355 112,365 110,375" />
+      
+      <!-- Joint dots (sized for visibility) -->
+      <circle class="accent-joints" cx="130" cy="28" r="3.5" style="animation-delay:2s" />
+      <circle class="accent-joints" cx="80" cy="75" r="3" style="animation-delay:2.1s" />
+      <circle class="accent-joints" cx="180" cy="75" r="3" style="animation-delay:2.15s" />
+      <circle class="accent-joints" cx="130" cy="100" r="2.5" style="animation-delay:2.2s" />
+      <circle class="accent-joints" cx="130" cy="140" r="2.5" style="animation-delay:2.3s" />
+      <circle class="accent-joints" cx="130" cy="160" r="2.5" style="animation-delay:2.4s" />
+      <circle class="accent-joints" cx="168" cy="215" r="3" style="animation-delay:2.5s" />
+      <circle class="accent-joints" cx="92" cy="215" r="3" style="animation-delay:2.55s" />
+      <circle class="accent-joints" cx="158" cy="295" r="2.5" style="animation-delay:2.6s" />
+      <circle class="accent-joints" cx="102" cy="295" r="2.5" style="animation-delay:2.65s" />
+      <circle class="accent-joints" cx="150" cy="375" r="2" style="animation-delay:2.7s" />
+      <circle class="accent-joints" cx="110" cy="375" r="2" style="animation-delay:2.75s" />
+      
+      <!-- Fascia web (dense connective tissue network) -->
+      <path class="accent-fascia" d="M80,75 C95,85 110,95 130,100" />
+      <path class="accent-fascia" d="M180,75 C165,85 150,95 130,100" />
+      <path class="accent-fascia" d="M130,100 C135,120 140,145 155,185" />
+      <path class="accent-fascia" d="M130,100 C125,120 120,145 105,185" />
+      <path class="accent-fascia" d="M80,75 C85,100 95,130 105,185" style="animation-delay:3s" />
+      <path class="accent-fascia" d="M180,75 C175,100 165,130 155,185" style="animation-delay:3s" />
+      <path class="accent-fascia" d="M130,140 C140,160 150,180 155,200" style="animation-delay:3.1s" />
+      <path class="accent-fascia" d="M130,140 C120,160 110,180 105,200" style="animation-delay:3.1s" />
+      <path class="accent-fascia" d="M168,215 C165,245 162,270 158,295" style="animation-delay:3.2s" />
+      <path class="accent-fascia" d="M92,215 C95,245 98,270 102,295" style="animation-delay:3.2s" />
+      <path class="accent-fascia" d="M130,210 C140,240 150,270 158,295" style="animation-delay:3.3s" />
+      <path class="accent-fascia" d="M130,210 C120,240 110,270 102,295" style="animation-delay:3.3s" />
+      <!-- Cross-body fascia -->
+      <path class="accent-fascia" d="M80,75 C110,110 140,160 168,215" style="animation-delay:3.4s" />
+      <path class="accent-fascia" d="M180,75 C150,110 120,160 92,215" style="animation-delay:3.4s" />
+      
+      <!-- Pulsing pelvis core with actual glow -->
+      <circle cx="130" cy="210" r="12" fill="rgba(196,162,101,0.1)" filter="url(#glow)" class="accent-glow-dot" />
+      <circle class="accent-ring" cx="130" cy="210" r="8" />
+      <circle class="accent-glow-dot" cx="130" cy="210" r="4" />
+    </svg>
+  </div>
+  <div class="hero__line"></div>
   <div class="hero__content">
     <div class="hero__label">Costa Mesa, California</div>
     <h1 class="hero__title">
@@ -1625,7 +1836,7 @@ ul { list-style: none; }
     if (scrollY < window.innerHeight) {
       const offset = scrollY * 0.3;
       if (heroBg) heroBg.style.transform = 'translateY(' + (offset * 0.5) + 'px)';
-      if (heroAccent) heroAccent.style.transform = 'rotate(45deg) translateY(' + (offset * 0.2) + 'px)';
+      if (heroAccent) heroAccent.style.transform = 'translateY(calc(-50% + ' + (offset * 0.15) + 'px))';
     }
   }
   window.addEventListener('scroll', parallax, { passive: true });
@@ -1643,6 +1854,7 @@ ul { list-style: none; }
       btn.disabled = true;
     });
   }
+
 
 })();
 </script>
