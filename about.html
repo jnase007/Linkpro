@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — LINK Pro</title>
+<meta name="description" content="Meet Dr. Jason Amstutz and the LINK Pro team. Concierge-level sports medicine rooted in osteopathic principles and a deep understanding of the body's interconnected systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#0D0D0D;--charcoal:#1A1A1A;--cream:#F5F0EB;--white:#FDFCFA;--gold:#C4A265;--gold-dark:#A8894F;--muted:#8A8A8A;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif;--transition:cubic-bezier(0.25,0.46,0.45,0.94)}
+html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--charcoal);background:var(--cream);-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;background:rgba(13,13,13,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(196,162,101,0.15)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--sans);font-size:1.1rem;font-weight:600;letter-spacing:.15em;color:#fff;text-transform:uppercase}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{color:var(--gold)!important;border:1px solid var(--gold);padding:.5rem 1.2rem;transition:all .3s}
+.nav-cta:hover{background:var(--gold);color:var(--black)!important}
+.nav-dropdown{position:relative}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:rgba(13,13,13,0.98);border:1px solid rgba(196,162,101,0.15);padding:12px 0;min-width:200px;margin-top:8px}
+.nav-dropdown:hover .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:8px 20px;font-size:.68rem;white-space:nowrap}
+
+/* PAGE HERO */
+.page-hero{padding:160px 0 80px;background:var(--charcoal);text-align:center}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:400;color:#fff;margin-bottom:16px}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.page-hero p{font-size:1rem;color:rgba(255,255,255,0.5);max-width:500px;margin:0 auto}
+
+/* CONTAINER */
+.container{max-width:1100px;margin:0 auto;padding:0 2rem}
+.section{padding:80px 0}
+.section-dark{background:var(--charcoal);color:#fff}
+
+/* LABEL */
+.label{font-size:.65rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.label::before{content:'';width:40px;height:1px;background:var(--gold)}
+.label.dark{color:var(--gold-dark)}
+.label.dark::before{background:var(--gold-dark)}
+
+/* ABOUT CONTENT */
+.about-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding:80px 0}
+.about-text h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;color:var(--charcoal);margin-bottom:24px;line-height:1.25}
+.about-text h2 em{font-style:italic;color:var(--gold-dark)}
+.about-text p{font-size:.95rem;line-height:1.8;color:rgba(26,26,26,0.65);margin-bottom:16px}
+.about-sidebar{background:var(--charcoal);padding:48px 40px}
+.about-sidebar blockquote{font-family:var(--serif);font-size:1.2rem;font-style:italic;line-height:1.6;color:rgba(255,255,255,0.8);margin-bottom:20px}
+.about-sidebar cite{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-style:normal}
+
+/* TEAM */
+.team{padding:80px 0;background:var(--charcoal)}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
+.team-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);padding:48px 40px;transition:all .4s var(--transition)}
+.team-card:hover{border-color:rgba(196,162,101,0.2);transform:translateY(-4px)}
+.team-card h3{font-family:var(--serif);font-size:1.6rem;color:#fff;margin-bottom:8px}
+.team-card .role{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:block}
+.team-card .creds{font-size:.75rem;color:var(--muted);margin-bottom:16px;letter-spacing:.05em}
+.team-card p{font-size:.9rem;line-height:1.75;color:rgba(255,255,255,0.5)}
+
+/* CTA BANNER */
+.cta-banner{padding:80px 0;text-align:center}
+.cta-banner h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--charcoal);margin-bottom:16px}
+.cta-banner h2 em{font-style:italic;color:var(--gold-dark)}
+.cta-banner p{font-size:1rem;color:rgba(26,26,26,0.5);margin-bottom:32px}
+.btn{display:inline-block;padding:16px 40px;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;transition:all .4s}
+.btn-gold{background:var(--gold);color:var(--charcoal)}
+.btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 10px 30px rgba(196,162,101,0.25)}
+
+/* FOOTER */
+.footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);padding:48px 0 24px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-size:.9rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#fff}
+.footer-logo span{color:var(--gold)}
+.footer p{font-size:.75rem;color:var(--muted)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:.7rem;color:var(--muted);transition:color .3s}
+.footer-links a:hover{color:var(--gold)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--transition),transform .8s var(--transition)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .about-intro,.team-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">LINK <span>PRO</span></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="#">What We Do</a>
+        <div class="nav-dropdown-menu">
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="somatherapy.html">SomaTherapy</a>
+        </div>
+      </li>
+      <li><a href="classes.html">Classes</a></li>
+      <li class="nav-dropdown">
+        <a href="courses.html">Courses</a>
+        <div class="nav-dropdown-menu">
+          <a href="courses.html#online">Online Courses</a>
+          <a href="courses.html#seminars">In-Person Seminars</a>
+          <a href="courses.html#upcoming">Upcoming Schedule</a>
+        </div>
+      </li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="label" style="justify-content:center;margin-bottom:24px">Who We Are</p>
+    <h1>Redefining What It Means to <em>Move, Perform & Heal</em></h1>
+    <p>A philosophy rooted in anatomy, guided by precision, and dedicated to lasting results.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="about-intro">
+      <div class="about-text">
+        <div class="label dark">Our Approach</div>
+        <h2>The body as a dynamic, <em>interconnected system</em></h2>
+        <p>We see the human body as a dynamic, interconnected system where every structure — from the pelvis and spine to the most intricate fascial tissues — plays a vital role in health and performance.</p>
+        <p>Our philosophy is rooted in a deep understanding of anatomy, physiology, and the fluid dynamics that govern the body's function. This approach allows us to <em>uncover the root causes of pain, dysfunction, and performance issues — not just treat symptoms.</em></p>
+        <p>Dr. Jason Amstutz, along with our expert team, is dedicated to providing innovative care and education based on years of study and mentorship under world-renowned osteopath Guy Voyer, DO.</p>
+        <p>Guided by the principles of BioTensegrity, we emphasize the importance of fluidity and elasticity in tissues, helping patients achieve long-lasting results by rehydrating and restoring movement at the deepest levels of the body.</p>
+      </div>
+      <div class="about-sidebar reveal">
+        <blockquote>"We believe education is key — empowering our patients to become their own best therapists."</blockquote>
+        <cite>— Dr. Jason Amstutz</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="container">
+    <div class="label" style="justify-content:center">Meet the Team</div>
+    <h2 style="font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:400;color:#fff;text-align:center;margin-top:8px">The Minds Behind <em style="font-style:italic;color:var(--gold)">LINK Pro</em></h2>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <h3>Dr. Jason Amstutz</h3>
+        <span class="role">Founder & Lead Practitioner</span>
+        <span class="creds">DC, CCSP*, RTP, CSCS</span>
+        <p>With a career dedicated to understanding the human body at its deepest level, Dr. Amstutz has developed a methodology that treats the body as the interconnected system it truly is — with the pelvis at its foundation. His expertise spans musculoskeletal, visceral, and neurological health, informed by years of mentorship under world-renowned osteopath Guy Voyer, DO.</p>
+      </div>
+      <div class="team-card reveal">
+        <h3>Max Karish</h3>
+        <span class="role">Lead ELDOA Instructor</span>
+        <span class="creds">California Certified Massage Therapist, Certified ELDOA Trainer, SomaTraining & SomaTherapy Practitioner</span>
+        <p>An LA native passionate about movement from a young age — gymnastics, martial arts, running, skateboarding. After experiencing chronic health issues that traditional medicine couldn't resolve, Max discovered ELDOA and it transformed his well-being. Inspired by Dr. Guy VOYER and Paul CHEK, Max now dedicates himself to helping others achieve optimal health.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to Take the <em>Leap?</em></h2>
+    <p>Whether you're an elite athlete or beginning your wellness journey — we're here to guide you.</p>
+    <a href="services.html" class="btn btn-gold">View Our Services</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">LINK <span>PRO</span></a>
+      <p>&copy; 2026 LINK Pro. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html#contact">Contact</a>
+        <a href="https://www.instagram.com/linkprosport/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.reveal').forEach(function(el){
+  new IntersectionObserver(function(e){e.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:.1}).observe(el);
+});
+</script>
+</body>
+</html>
