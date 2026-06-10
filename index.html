@@ -233,87 +233,52 @@ ul { list-style: none; }
     linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
   background-size: 80px 80px;
 }
-/* Hero accent — abstract human form */
+/* Hero accent — geometric flowing lines */
 .hero__accent {
-  position: absolute; right: 2%; top: 50%; z-index: 2;
+  position: absolute; right: 0; top: 50%; z-index: 2;
   transform: translateY(-50%);
-  width: 480px; height: 700px;
+  width: 55%; height: 90%;
   opacity: 0;
   animation: heroAccentIn 2s ease 0.5s forwards;
+  pointer-events: none;
 }
 @keyframes heroAccentIn {
   from { opacity: 0; transform: translateY(-48%) scale(0.95); }
   to { opacity: 1; transform: translateY(-50%) scale(1); }
 }
 .hero__accent svg { width: 100%; height: 100%; overflow: visible; }
-/* Main body contour */
-.accent-body {
-  fill: none; stroke: rgba(196,162,101,0.3); stroke-width: 1; stroke-linecap: round;
-  stroke-dasharray: 1200; stroke-dashoffset: 1200;
-  animation: drawSlow 3.5s ease 0.6s forwards;
+/* Flowing arc lines */
+.accent-arc {
+  fill: none; stroke: rgba(196,162,101,0.2); stroke-width: 1; stroke-linecap: round;
+  stroke-dasharray: 2000; stroke-dashoffset: 2000;
+  animation: drawSlow 3s ease 0.6s forwards;
 }
-.accent-body-r {
-  fill: none; stroke: rgba(196,162,101,0.25); stroke-width: 1; stroke-linecap: round;
-  stroke-dasharray: 1200; stroke-dashoffset: 1200;
+.accent-arc--bold {
+  stroke: rgba(196,162,101,0.35); stroke-width: 1.5;
   animation: drawSlow 3.5s ease 0.8s forwards;
 }
-/* Inner structure lines */
-.accent-spine {
-  fill: none; stroke: rgba(196,162,101,0.5); stroke-width: 1.5; stroke-linecap: round;
-  stroke-dasharray: 600; stroke-dashoffset: 600;
-  animation: drawSlow 2.5s ease 1.2s forwards;
+.accent-arc--thin {
+  stroke: rgba(196,162,101,0.1); stroke-width: 0.5;
+  animation: drawSlow 4s ease 1s forwards;
 }
-.accent-pelvis {
-  fill: none; stroke: rgba(196,162,101,0.6); stroke-width: 2; stroke-linecap: round;
-  stroke-dasharray: 300; stroke-dashoffset: 300;
-  animation: drawSlow 2s ease 2s forwards;
+/* Dots at intersections */
+.accent-dot {
+  fill: rgba(196,162,101,0.6); opacity: 0;
+  animation: dotIn 0.5s ease forwards;
 }
-.accent-pelvis-glow {
-  fill: rgba(196,162,101,0.06); stroke: none;
-  opacity: 0;
-  animation: glowIn 2s ease 2.8s forwards;
-}
-.accent-joints {
-  fill: rgba(196,162,101,0.4); stroke: none;
-  opacity: 0;
-  animation: dotIn 0.6s ease forwards;
-}
-.accent-fascia {
-  fill: none; stroke: rgba(196,162,101,0.08); stroke-width: 0.5;
-  stroke-dasharray: 4 6;
-  opacity: 0;
-  animation: fadeIn2 1.5s ease 3s forwards;
-}
-.accent-glow-dot {
+.accent-dot--glow {
   fill: var(--gold); opacity: 0;
-  animation: accentPulse 3s ease-in-out 2.8s infinite;
+  animation: accentPulse 4s ease-in-out 2.5s infinite;
 }
-.accent-ring {
-  fill: none; stroke: rgba(196,162,101,0.3); stroke-width: 0.8;
-  opacity: 0;
-  animation: ringExpand 3s ease-in-out 2.8s infinite;
+/* Concentric rings */
+.accent-ring-geo {
+  fill: none; stroke: rgba(196,162,101,0.12); stroke-width: 0.8;
+  opacity: 0; animation: ringFade 1.5s ease 2s forwards;
 }
-@keyframes drawSlow {
-  to { stroke-dashoffset: 0; }
-}
-@keyframes glowIn {
-  to { opacity: 1; }
-}
-@keyframes dotIn {
-  to { opacity: 1; }
-}
-@keyframes fadeIn2 {
-  to { opacity: 1; }
-}
-@keyframes accentPulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-@keyframes ringExpand {
-  0% { opacity: 0.3; transform-origin: center; transform: scale(1); }
-  70% { opacity: 0; transform: scale(2.5); }
-  100% { opacity: 0; transform: scale(2.5); }
-}
+@keyframes drawSlow { to { stroke-dashoffset: 0; } }
+@keyframes dotIn { to { opacity: 1; } }
+@keyframes accentPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
+@keyframes ringFade { to { opacity: 1; } }
 /* Horizontal gold line accent */
 .hero__line {
   position: absolute; bottom: 30%; left: 0; z-index: 2;
@@ -1308,92 +1273,37 @@ ul { list-style: none; }
   <div class="hero__grain"></div>
   <div class="hero__grid"></div>
   <div class="hero__accent">
-    <svg viewBox="0 0 260 400" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="pelvisGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#C4A265" stop-opacity="0.15" />
-          <stop offset="50%" stop-color="#C4A265" stop-opacity="0.05" />
-          <stop offset="100%" stop-color="#C4A265" stop-opacity="0" />
-        </radialGradient>
-        <radialGradient id="bodyAnchor" cx="50%" cy="45%" r="55%">
-          <stop offset="0%" stop-color="#C4A265" stop-opacity="0.04" />
-          <stop offset="100%" stop-color="#C4A265" stop-opacity="0" />
-        </radialGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="4" result="blur" />
-          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-        </filter>
-      </defs>
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <!-- Flowing architectural arcs suggesting movement & precision -->
       
-      <!-- Anchor glow behind figure -->
-      <ellipse cx="130" cy="195" rx="110" ry="160" fill="url(#bodyAnchor)" />
+      <!-- Large sweeping curves -->
+      <path class="accent-arc accent-arc--bold" d="M50,450 C50,250 150,100 300,80 C400,65 460,120 480,200" />
+      <path class="accent-arc" d="M20,480 C60,300 180,150 350,120 C430,105 480,160 490,250" />
+      <path class="accent-arc accent-arc--thin" d="M80,420 C100,280 200,160 340,140 C420,128 470,175 485,240" />
       
-      <!-- Head -->
-      <ellipse class="accent-body" cx="130" cy="28" rx="14" ry="17" />
+      <!-- Counter arcs -->
+      <path class="accent-arc" d="M480,400 C440,320 350,250 250,260 C180,270 130,310 100,370" style="animation-delay:0.3s" />
+      <path class="accent-arc accent-arc--thin" d="M460,440 C420,340 320,270 230,285 C170,295 130,330 110,390" style="animation-delay:0.5s" />
       
-      <!-- Neck -->
-      <path class="accent-body" d="M122,44 C122,50 120,55 118,60" />
-      <path class="accent-body-r" d="M138,44 C138,50 140,55 142,60" />
+      <!-- Vertical flowing lines -->
+      <path class="accent-arc accent-arc--bold" d="M300,20 C295,80 280,160 270,240 C260,320 265,380 280,460" style="animation-delay:0.8s" />
+      <path class="accent-arc accent-arc--thin" d="M320,30 C315,90 305,170 295,240 C285,310 290,370 300,440" style="animation-delay:1s" />
+      <path class="accent-arc accent-arc--thin" d="M280,40 C278,100 268,180 260,245 C252,310 255,370 265,440" style="animation-delay:1.2s" />
       
-      <!-- Shoulders + Arms (wider, more athletic) -->
-      <path class="accent-body" d="M118,60 C108,62 92,66 80,75 C72,80 68,88 65,100" />
-      <path class="accent-body-r" d="M142,60 C152,62 168,66 180,75 C188,80 192,88 195,100" />
+      <!-- Concentric rings at focal point -->
+      <circle class="accent-ring-geo" cx="280" cy="240" r="40" />
+      <circle class="accent-ring-geo" cx="280" cy="240" r="70" style="animation-delay:2.2s" />
+      <circle class="accent-ring-geo" cx="280" cy="240" r="110" style="animation-delay:2.4s;stroke-opacity:0.06" />
       
-      <!-- Torso right contour -->
-      <path class="accent-body" d="M142,65 C148,80 150,95 150,110 C150,125 148,140 146,155 C145,165 148,175 155,185 C162,195 168,205 168,215" />
-      <!-- Torso left contour -->
-      <path class="accent-body-r" d="M118,65 C112,80 110,95 110,110 C110,125 112,140 114,155 C115,165 112,175 105,185 C98,195 92,205 92,215" />
-      
-      <!-- Spine (bold central line) -->
-      <path class="accent-spine" d="M130,44 C129,60 128,80 129,100 C130,120 131,140 130,160 C129,175 129,190 130,210" />
-      
-      <!-- Pelvis glow orb -->
-      <ellipse cx="130" cy="210" rx="50" ry="35" fill="url(#pelvisGlow)" />
-      
-      <!-- Pelvis structure (bold, unmistakable) -->
-      <path class="accent-pelvis-glow" d="M85,200 Q100,185 130,183 Q160,185 175,200 Q170,225 155,238 Q142,247 130,250 Q118,247 105,238 Q90,225 85,200Z" />
-      <path class="accent-pelvis" d="M82,200 Q100,180 130,178 Q160,180 178,200" />
-      <path class="accent-pelvis" d="M85,205 Q100,232 115,244 Q130,252 145,244 Q160,232 175,205" />
-      
-      <!-- Legs -->
-      <path class="accent-body" d="M155,238 C160,255 162,275 158,295 C155,310 150,325 148,345 C147,355 148,365 150,375" />
-      <path class="accent-body-r" d="M105,238 C100,255 98,275 102,295 C105,310 110,325 112,345 C113,355 112,365 110,375" />
-      
-      <!-- Joint dots (sized for visibility) -->
-      <circle class="accent-joints" cx="130" cy="28" r="3.5" style="animation-delay:2s" />
-      <circle class="accent-joints" cx="80" cy="75" r="3" style="animation-delay:2.1s" />
-      <circle class="accent-joints" cx="180" cy="75" r="3" style="animation-delay:2.15s" />
-      <circle class="accent-joints" cx="130" cy="100" r="2.5" style="animation-delay:2.2s" />
-      <circle class="accent-joints" cx="130" cy="140" r="2.5" style="animation-delay:2.3s" />
-      <circle class="accent-joints" cx="130" cy="160" r="2.5" style="animation-delay:2.4s" />
-      <circle class="accent-joints" cx="168" cy="215" r="3" style="animation-delay:2.5s" />
-      <circle class="accent-joints" cx="92" cy="215" r="3" style="animation-delay:2.55s" />
-      <circle class="accent-joints" cx="158" cy="295" r="2.5" style="animation-delay:2.6s" />
-      <circle class="accent-joints" cx="102" cy="295" r="2.5" style="animation-delay:2.65s" />
-      <circle class="accent-joints" cx="150" cy="375" r="2" style="animation-delay:2.7s" />
-      <circle class="accent-joints" cx="110" cy="375" r="2" style="animation-delay:2.75s" />
-      
-      <!-- Fascia web (dense connective tissue network) -->
-      <path class="accent-fascia" d="M80,75 C95,85 110,95 130,100" />
-      <path class="accent-fascia" d="M180,75 C165,85 150,95 130,100" />
-      <path class="accent-fascia" d="M130,100 C135,120 140,145 155,185" />
-      <path class="accent-fascia" d="M130,100 C125,120 120,145 105,185" />
-      <path class="accent-fascia" d="M80,75 C85,100 95,130 105,185" style="animation-delay:3s" />
-      <path class="accent-fascia" d="M180,75 C175,100 165,130 155,185" style="animation-delay:3s" />
-      <path class="accent-fascia" d="M130,140 C140,160 150,180 155,200" style="animation-delay:3.1s" />
-      <path class="accent-fascia" d="M130,140 C120,160 110,180 105,200" style="animation-delay:3.1s" />
-      <path class="accent-fascia" d="M168,215 C165,245 162,270 158,295" style="animation-delay:3.2s" />
-      <path class="accent-fascia" d="M92,215 C95,245 98,270 102,295" style="animation-delay:3.2s" />
-      <path class="accent-fascia" d="M130,210 C140,240 150,270 158,295" style="animation-delay:3.3s" />
-      <path class="accent-fascia" d="M130,210 C120,240 110,270 102,295" style="animation-delay:3.3s" />
-      <!-- Cross-body fascia -->
-      <path class="accent-fascia" d="M80,75 C110,110 140,160 168,215" style="animation-delay:3.4s" />
-      <path class="accent-fascia" d="M180,75 C150,110 120,160 92,215" style="animation-delay:3.4s" />
-      
-      <!-- Pulsing pelvis core with actual glow -->
-      <circle cx="130" cy="210" r="12" fill="rgba(196,162,101,0.1)" filter="url(#glow)" class="accent-glow-dot" />
-      <circle class="accent-ring" cx="130" cy="210" r="8" />
-      <circle class="accent-glow-dot" cx="130" cy="210" r="4" />
+      <!-- Intersection dots -->
+      <circle class="accent-dot" cx="300" cy="80" r="2" style="animation-delay:2s" />
+      <circle class="accent-dot" cx="350" cy="120" r="1.5" style="animation-delay:2.1s" />
+      <circle class="accent-dot--glow" cx="280" cy="240" r="4" />
+      <circle class="accent-dot" cx="280" cy="240" r="2" style="animation-delay:2.3s" />
+      <circle class="accent-dot" cx="250" cy="260" r="1.5" style="animation-delay:2.4s" />
+      <circle class="accent-dot" cx="270" cy="240" r="1.5" style="animation-delay:2.5s" />
+      <circle class="accent-dot" cx="100" cy="370" r="2" style="animation-delay:2.6s" />
+      <circle class="accent-dot" cx="480" cy="200" r="2" style="animation-delay:2.2s" />
     </svg>
   </div>
   <div class="hero__line"></div>
@@ -1409,7 +1319,7 @@ ul { list-style: none; }
         <span>Book a Consultation</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="#philosophy" class="btn-ghost">
+      <a href="about.html" class="btn-ghost">
         Discover Our Approach
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -2004,10 +1914,10 @@ ul { list-style: none; }
         LINK Pro
       </a>
       <div class="footer__links">
-        <a href="#philosophy">Philosophy</a>
-        <a href="#services">Services</a>
-        <a href="#eldoa">ELDOA</a>
-        <a href="#drj">Dr. J</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="classes.html">Classes</a>
+        <a href="courses.html">Courses</a>
         <a href="#contact">Book Now</a>
       </div>
       <div class="footer__social">
