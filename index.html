@@ -874,6 +874,179 @@ ul { list-style: none; }
 }
 
 /* ═══════════════════════════════════════════════
+   COURSES
+   ═══════════════════════════════════════════════ */
+.courses {
+  padding: var(--section-pad) 0;
+}
+.courses__header { text-align: center; margin-bottom: 64px; }
+.courses__title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400; color: var(--charcoal);
+  margin-bottom: 16px;
+}
+.courses__title em { font-style: italic; color: var(--gold-dark); }
+.courses__subtitle {
+  font-size: 1rem; font-weight: 300;
+  color: rgba(26,26,26,0.6); max-width: 580px; margin: 0 auto;
+}
+.courses__section { margin-bottom: 64px; }
+.courses__section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; font-weight: 500;
+  color: var(--charcoal); margin-bottom: 12px;
+}
+.courses__section-desc {
+  font-size: 0.95rem; color: rgba(26,26,26,0.6);
+  margin-bottom: 32px; max-width: 600px;
+}
+
+/* Online course cards */
+.courses__online-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.course-card {
+  background: var(--white); padding: 40px 32px;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.4s var(--transition);
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  border-color: var(--gold);
+}
+.course-card__badge {
+  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold-dark);
+  background: rgba(196,162,101,0.1); display: inline-block;
+  padding: 4px 12px; margin-bottom: 20px; align-self: flex-start;
+}
+.course-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 500;
+  color: var(--charcoal); margin-bottom: 12px;
+}
+.course-card__desc {
+  font-size: 0.9rem; font-weight: 300;
+  color: rgba(26,26,26,0.6); line-height: 1.7;
+  margin-bottom: 20px; flex: 1;
+}
+.course-card__meta {
+  display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px;
+}
+.course-card__price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; color: var(--charcoal);
+}
+.course-card__lessons {
+  font-size: 0.8rem; font-weight: 500;
+  color: var(--muted); letter-spacing: 0.05em;
+}
+.course-card__access {
+  font-size: 0.72rem; color: var(--gold-dark); font-weight: 500;
+}
+.course-card__cta {
+  display: inline-block; padding: 14px 28px; text-align: center;
+  background: var(--charcoal); color: var(--white);
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; transition: all 0.3s;
+}
+.course-card__cta:hover {
+  background: var(--gold); color: var(--charcoal);
+}
+
+/* Seminar cards */
+.courses__seminars { display: flex; flex-direction: column; gap: 16px; }
+.seminar-card {
+  display: flex; align-items: center; gap: 32px;
+  padding: 32px 36px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.4s var(--transition);
+}
+.seminar-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+}
+.seminar-card__date {
+  display: flex; flex-direction: column; align-items: center;
+  min-width: 72px; padding: 12px 8px;
+  border: 1px solid rgba(196,162,101,0.3);
+}
+.seminar-card__month {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold-dark);
+}
+.seminar-card__days {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; color: var(--charcoal); margin-top: 2px;
+}
+.seminar-card__content { flex: 1; }
+.seminar-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 500;
+  color: var(--charcoal); margin-bottom: 4px;
+}
+.seminar-card__location {
+  font-size: 0.75rem; font-weight: 500;
+  color: var(--gold-dark); letter-spacing: 0.05em; margin-bottom: 8px;
+}
+.seminar-card__text {
+  font-size: 0.85rem; font-weight: 300;
+  color: rgba(26,26,26,0.55); line-height: 1.65;
+}
+.seminar-card__price-block {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 12px; min-width: 120px;
+}
+.seminar-card__price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; color: var(--charcoal);
+}
+.seminar-card__soon {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--muted);
+}
+.seminar-card__cta {
+  display: inline-block; padding: 10px 24px;
+  background: var(--gold); color: var(--charcoal);
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; transition: all 0.3s;
+}
+.seminar-card__cta:hover {
+  background: var(--charcoal); color: var(--gold);
+}
+
+/* Bundle banner */
+.courses__bundle { margin-top: 32px; }
+.courses__bundle-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 36px 48px;
+  background: var(--charcoal); gap: 32px;
+}
+.courses__bundle-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; color: var(--gold); margin-bottom: 6px;
+}
+.courses__bundle-desc {
+  font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.6);
+}
+.courses__bundle-price {
+  display: flex; flex-direction: column; align-items: flex-end;
+}
+.courses__bundle-was {
+  font-size: 0.85rem; color: var(--muted);
+  text-decoration: line-through;
+}
+.courses__bundle-now {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem; color: var(--gold);
+}
+
+/* ═══════════════════════════════════════════════
    BOOKING / CONTACT
    ═══════════════════════════════════════════════ */
 .booking {
@@ -1052,6 +1225,11 @@ ul { list-style: none; }
   .nav__links { display: none; }
   .hamburger { display: flex; }
   .hero__accent { display: none; }
+  .courses__online-grid { grid-template-columns: 1fr; }
+  .seminar-card { flex-direction: column; text-align: center; gap: 20px; padding: 28px 24px; }
+  .seminar-card__date { flex-direction: row; gap: 8px; }
+  .courses__bundle-inner { flex-direction: column; text-align: center; padding: 28px 24px; }
+  .courses__bundle-price { align-items: center; }
   .philosophy__grid,
   .difference__grid,
   .eldoa__inner,
@@ -1098,8 +1276,8 @@ ul { list-style: none; }
       <a href="#philosophy">Philosophy</a>
       <a href="#services">Services</a>
       <a href="#eldoa">ELDOA</a>
+      <a href="#courses">Courses</a>
       <a href="#drj">Dr. J</a>
-      <a href="#contact">Contact</a>
       <a href="#contact" class="nav__cta">Book Now</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -1113,7 +1291,7 @@ ul { list-style: none; }
   <a href="#philosophy" class="mobile-nav__link">Philosophy</a>
   <a href="#services" class="mobile-nav__link">Services</a>
   <a href="#eldoa" class="mobile-nav__link">ELDOA</a>
-  <a href="#testimonials" class="mobile-nav__link">Results</a>
+  <a href="#courses" class="mobile-nav__link">Courses</a>
   <a href="#drj" class="mobile-nav__link">Dr. J</a>
   <a href="#contact" class="mobile-nav__link">Contact</a>
   <a href="#contact" class="mobile-nav__cta">Book a Consultation</a>
@@ -1493,6 +1671,132 @@ ul { list-style: none; }
 </section>
 
 <!-- ═══════════════════════════════════════════════
+     COURSES
+     ═══════════════════════════════════════════════ -->
+<section class="courses section-cream" id="courses">
+  <div class="container container--wide">
+    <div class="courses__header reveal">
+      <div class="label" style="justify-content: center;">Professional Education</div>
+      <h2 class="courses__title">Courses & <em>Certifications</em></h2>
+      <p class="courses__subtitle">Elevate your practice with our comprehensive course offerings — from self-paced online programs to intensive hands-on seminars led by Dr. Amstutz.</p>
+    </div>
+
+    <!-- Online Courses -->
+    <div class="courses__section reveal">
+      <h3 class="courses__section-title">Online Courses</h3>
+      <div class="courses__online-grid">
+        <div class="course-card course-card--online">
+          <div class="course-card__badge">Self-Paced</div>
+          <h4 class="course-card__title">Pelvis 1.0</h4>
+          <p class="course-card__desc">Foundational understanding of pelvic anatomy, assessment, and treatment principles. Your starting point for the pelvis-centered approach.</p>
+          <div class="course-card__meta">
+            <span class="course-card__price">$100</span>
+            <span class="course-card__access">✦ Unlimited Lifetime Access</span>
+          </div>
+          <a href="https://www.linkprosport.com/pelvis-10" class="course-card__cta" target="_blank">Enroll Now</a>
+        </div>
+        <div class="course-card course-card--online">
+          <div class="course-card__badge">Self-Paced</div>
+          <h4 class="course-card__title">Pelvis 3.0</h4>
+          <p class="course-card__desc">Advanced pelvic expertise — address complex cases and build targeted strength. Three in-depth video lessons totaling 3+ hours of instruction.</p>
+          <div class="course-card__meta">
+            <span class="course-card__lessons">3 Lessons · 3:18:45</span>
+          </div>
+          <a href="https://www.linkprosport.com/courses/pelvis" class="course-card__cta" target="_blank">Learn More</a>
+        </div>
+        <div class="course-card course-card--online">
+          <div class="course-card__badge">Self-Paced</div>
+          <h4 class="course-card__title">Lower Limb Injury Prevention</h4>
+          <p class="course-card__desc">Comprehensive protocols for preventing and addressing lower limb injuries through fascial chain assessment and targeted intervention strategies.</p>
+          <div class="course-card__meta">
+            <span class="course-card__price">$199</span>
+            <span class="course-card__access">✦ Unlimited Lifetime Access</span>
+          </div>
+          <a href="https://www.linkprosport.com/llip" class="course-card__cta" target="_blank">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- In-Person Seminars -->
+    <div class="courses__section reveal">
+      <h3 class="courses__section-title">In-Person Seminars</h3>
+      <p class="courses__section-desc">Intensive, hands-on training in fascial chain treatment and 2TLS technique. For practitioners ready to transform their approach.</p>
+      <div class="courses__seminars">
+        <div class="seminar-card reveal">
+          <div class="seminar-card__date">
+            <span class="seminar-card__month">JUN</span>
+            <span class="seminar-card__days">7–9</span>
+          </div>
+          <div class="seminar-card__content">
+            <h4 class="seminar-card__title">Fascia & 2TLS Treatment of the Upper Limb</h4>
+            <p class="seminar-card__location">Newport Beach, CA · 9 AM – 5 PM</p>
+            <p class="seminar-card__text">Treat the upper limb as an integrated fascial system. Learn osteoarticular pumping, fascial chain identification, and transverse tendon & ligament stretching techniques.</p>
+          </div>
+          <div class="seminar-card__price-block">
+            <span class="seminar-card__price">$1,500</span>
+            <a href="https://www.linkprosport.com/fascia2tls" class="seminar-card__cta" target="_blank">Register</a>
+          </div>
+        </div>
+        <div class="seminar-card reveal reveal-delay-1">
+          <div class="seminar-card__date">
+            <span class="seminar-card__month">AUG</span>
+            <span class="seminar-card__days">1–5</span>
+          </div>
+          <div class="seminar-card__content">
+            <h4 class="seminar-card__title">Cranial Diaphragm feat. Scott Herrara</h4>
+            <p class="seminar-card__location">Dallas, TX</p>
+            <p class="seminar-card__text">Advanced cranial techniques exploring the relationship between the cranial diaphragm, fascial continuity, and neurological function.</p>
+          </div>
+          <div class="seminar-card__price-block">
+            <span class="seminar-card__soon">Coming Soon</span>
+          </div>
+        </div>
+        <div class="seminar-card reveal reveal-delay-2">
+          <div class="seminar-card__date">
+            <span class="seminar-card__month">SEP</span>
+            <span class="seminar-card__days">25–27</span>
+          </div>
+          <div class="seminar-card__content">
+            <h4 class="seminar-card__title">Fascia & 2TLS Treatment of the Lower Limb</h4>
+            <p class="seminar-card__location">Newport Beach, CA</p>
+            <p class="seminar-card__text">Lower limb fascial chain assessment and treatment. Osteoarticular pumping techniques for the hip, knee, and ankle complex.</p>
+          </div>
+          <div class="seminar-card__price-block">
+            <span class="seminar-card__price">$1,500</span>
+          </div>
+        </div>
+        <div class="seminar-card reveal reveal-delay-3">
+          <div class="seminar-card__date">
+            <span class="seminar-card__month">DEC</span>
+            <span class="seminar-card__days">4–6</span>
+          </div>
+          <div class="seminar-card__content">
+            <h4 class="seminar-card__title">Fascia & 2TLS Treatment of the Trunk & Pelvis</h4>
+            <p class="seminar-card__location">Newport Beach, CA</p>
+            <p class="seminar-card__text">The culmination of the series — integrating trunk and pelvic fascial systems for complete body treatment mastery.</p>
+          </div>
+          <div class="seminar-card__price-block">
+            <span class="seminar-card__price">$1,500</span>
+          </div>
+        </div>
+      </div>
+      <div class="courses__bundle reveal">
+        <div class="courses__bundle-inner">
+          <div>
+            <h4 class="courses__bundle-title">Bundle & Save</h4>
+            <p class="courses__bundle-desc">Enroll in all three in-person courses (Upper Limb, Lower Limb, Trunk & Pelvis) and save $750.</p>
+          </div>
+          <div class="courses__bundle-price">
+            <span class="courses__bundle-was">$4,500</span>
+            <span class="courses__bundle-now">$3,750</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
      TESTIMONIALS
      ═══════════════════════════════════════════════ -->
 <section class="testimonials section-dark" id="testimonials">
@@ -1629,6 +1933,7 @@ ul { list-style: none; }
               <option>Organ Function Therapy</option>
               <option>ELDOA Group Classes</option>
               <option>Myofascial Stretching</option>
+            <option>Professional Courses</option>
               <option>Comprehensive Assessment</option>
             </select>
           </div>
