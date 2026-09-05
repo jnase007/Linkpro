@@ -439,6 +439,52 @@ ul { list-style: none; }
   font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--muted);
 }
+.teams-marquee {
+  background: #0a0a0a;
+  border-top: 1px solid rgba(196, 162, 101, 0.14);
+  border-bottom: 1px solid rgba(196, 162, 101, 0.14);
+  overflow: hidden;
+  padding: 18px 0;
+}
+.teams-marquee__track {
+  display: flex; align-items: center; width: max-content;
+  animation: teamsScroll 28s linear infinite;
+}
+.teams-marquee__item {
+  display: inline-flex; align-items: center; gap: 28px;
+  padding: 0 28px; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(245, 240, 235, 0.72); white-space: nowrap;
+}
+.teams-marquee__item span { color: var(--gold); letter-spacing: 0; font-size: 0.55rem; }
+@keyframes teamsScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.quote-strip {
+  background: #0a0a0a;
+  border-top: 1px solid rgba(196, 162, 101, 0.14);
+  border-bottom: 1px solid rgba(196, 162, 101, 0.14);
+  padding: 48px 24px; text-align: center;
+}
+.quote-strip__text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-style: italic; color: rgba(255,255,255,0.86);
+  max-width: 760px; margin: 0 auto 16px; line-height: 1.65;
+}
+.quote-strip__attr {
+  font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); font-weight: 600;
+}
+.quote-strip__attr span {
+  display: block; margin-top: 6px; color: var(--muted);
+  letter-spacing: 0.06em; font-weight: 500; text-transform: none;
+}
+[data-quote-rotate] { transition: opacity 0.35s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .teams-marquee__track { animation: none; }
+}
 
 /* ═══════════════════════════════════════════════
    PHILOSOPHY
@@ -1417,6 +1463,15 @@ ul { list-style: none; }
   </div>
 </div>
 
+<div class="teams-marquee" aria-label="Teams Dr. Amstutz has worked with">
+  <div class="teams-marquee__track">
+    <span class="teams-marquee__item">NFL <span>•</span> NHL <span>•</span> San Francisco 49ers <span>•</span> Atlanta Hawks</span>
+    <span class="teams-marquee__item">NFL <span>•</span> NHL <span>•</span> San Francisco 49ers <span>•</span> Atlanta Hawks</span>
+    <span class="teams-marquee__item">NFL <span>•</span> NHL <span>•</span> San Francisco 49ers <span>•</span> Atlanta Hawks</span>
+    <span class="teams-marquee__item">NFL <span>•</span> NHL <span>•</span> San Francisco 49ers <span>•</span> Atlanta Hawks</span>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════════════
      PHILOSOPHY
      ═══════════════════════════════════════════════ -->
@@ -1517,6 +1572,11 @@ ul { list-style: none; }
     </div>
   </div>
 </section>
+
+<aside class="quote-strip" data-quote-rotate>
+  <p class="quote-strip__text" data-quote-text></p>
+  <p class="quote-strip__attr" data-quote-attr></p>
+</aside>
 
 <!-- ═══════════════════════════════════════════════
      THE LINK DIFFERENCE
@@ -2133,6 +2193,7 @@ ul { list-style: none; }
 
 })();
 </script>
+<script src="js/site-quotes.js"></script>
 
 </body>
 </html>
