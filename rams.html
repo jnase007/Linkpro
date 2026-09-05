@@ -66,8 +66,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .nav-links a:hover,
 .nav-links a.active { color: var(--white); }
-.nav-cta{font-size:.7rem!important;font-weight:600!important;letter-spacing:.15em!important;text-transform:uppercase;color:#1A1A1A!important;background:#C4A265;padding:12px 28px!important;border:1px solid #C4A265;transition:all .4s}
-.nav-cta:hover{background:transparent;color:#C4A265!important}
+.nav-cluster{display:flex;align-items:center;gap:36px}
+.nav-cta{display:inline-block;flex-shrink:0;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#1A1A1A;background:#C4A265;padding:12px 28px;border:1px solid #C4A265;line-height:1;white-space:nowrap;transition:all .4s cubic-bezier(0.25,0.46,0.45,0.94)}
+.nav-cta:hover{background:transparent;color:#C4A265}.nav-cta::after{display:none}
 .nav-dropdown { position: relative; overflow: visible; }
 .nav, .nav-inner, .nav-links { overflow: visible; }
 .nav-dropdown>a::before{content:'';display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid var(--gold);margin-right:8px;transform:translateY(-1px)}
@@ -465,7 +466,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img class="logo-mark" src="images/logo.svg" alt="">LINK Pro</a>
-    <ul class="nav-links">
+    <div class="nav-cluster"><ul class="nav-links">
       <li><a href="about.html">About</a></li>
       <li class="nav-dropdown">
         <a href="services.html">What We Do</a>
@@ -487,8 +488,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="rams.html" class="active">Rams</a></li>
-      <li><a href="#coach" class="nav-cta">Coach the Rams</a></li>
-    </ul>
+</ul>
+    <a href="#coach" class="nav-cta">Coach the Rams</a>
+    </div>
   </div>
 </nav>
 
