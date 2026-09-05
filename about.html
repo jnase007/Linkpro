@@ -62,8 +62,7 @@ a{text-decoration:none;color:inherit}
 .league-row{display:flex;align-items:center;justify-content:center;gap:clamp(56px,12vw,140px);padding:56px 0 8px;margin-top:8px;border-top:1px solid rgba(196,162,101,.22)}
 .league-lockup{display:flex;align-items:center;justify-content:center;color:var(--charcoal)}
 .league-lockup svg{display:block;height:92px;width:auto}
-.league-lockup--nhl svg{height:54px}
-@media(max-width:768px){.league-row{gap:36px;padding-top:40px;flex-wrap:wrap}.league-lockup svg{height:72px}.league-lockup--nhl svg{height:42px}}
+@media(max-width:768px){.league-row{gap:36px;padding-top:40px;flex-wrap:wrap}.league-lockup svg{height:72px}}
 
 /* TEAM */
 .team{padding:80px 0;background:var(--charcoal)}
@@ -245,9 +244,12 @@ a{text-decoration:none;color:inherit}
           <text x="60" y="108" text-anchor="middle" fill="#1A1A1A" font-family="Inter,Helvetica,sans-serif" font-size="22" font-weight="800" letter-spacing="4">NFL</text>
         </svg>
       </div>
-      <div class="league-lockup league-lockup--nhl" aria-label="NHL">
-        <svg viewBox="0 0 220 64" fill="none" aria-hidden="true">
-          <text x="110" y="48" text-anchor="middle" fill="#1A1A1A" font-family="'Playfair Display',Georgia,serif" font-size="52" font-weight="700" letter-spacing="6">NHL</text>
+      <div class="league-lockup" aria-label="NHL">
+        <svg viewBox="0 0 120 148" fill="none" aria-hidden="true">
+          <path d="M60 6 L112 26 V78 C112 114 86 134 60 144 C34 134 8 114 8 78 V26 Z" fill="#1A1A1A"/>
+          <path d="M60 16 L102 34 V76 C102 106 82 124 60 134 C38 124 18 106 18 76 V34 Z" fill="#FDFCFA"/>
+          <path d="M22 92 L98 48 L102 58 L26 102 Z" fill="#1A1A1A"/>
+          <text x="60" y="84" text-anchor="middle" transform="rotate(-28 60 78)" fill="#FDFCFA" font-family="Inter,Helvetica,sans-serif" font-size="22" font-weight="800" letter-spacing="3">NHL</text>
         </svg>
       </div>
     </div>
