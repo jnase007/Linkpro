@@ -1,6 +1,16 @@
 (function () {
   var quotes = [
     {
+      q: "This review of Link Medical Center is long overdue. About 5 years ago, I suddenly could barely walk. I had always been active — walking, yoga, body pump. What felt like a little discomfort escalated to the point of barely being able to walk.",
+      a: "Deets",
+      r: "Google review"
+    },
+    {
+      q: "I cannot express how much Dr. Amstutz has changed my life. After being in so much pain for so long, I had given up hope of ever being pain free. After 4 visits I was able to sleep through the night without waking up in pain.",
+      a: "Sylvia Wesley",
+      r: "Google review"
+    },
+    {
       q: "He didn't just review structures — he connected them directly to specific techniques that can improve joint movement and function in our athletes.",
       a: "Taka",
       r: "Assistant Athletic Trainer, Atlanta Hawks"
@@ -43,5 +53,5 @@
   window.setInterval(function () {
     i = (i + 1) % quotes.length;
     paint(quotes[i]);
-  }, 6500);
+  }, 8000);
 })();
