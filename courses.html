@@ -17,7 +17,13 @@
 
 /* ONLINE COURSES */
 .online-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.course-card{background:#fff;padding:40px 32px;border:1px solid rgba(0,0,0,0.06);transition:all .4s var(--transition);display:flex;flex-direction:column}
+.course-card{background:#fff;padding:0 0 40px;border:1px solid rgba(0,0,0,0.06);transition:all .4s var(--transition);display:flex;flex-direction:column;overflow:hidden}
+.course-card__image{height:180px;overflow:hidden}
+.course-card__image img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.1) contrast(1.04)}
+.course-card .course-badge,.course-card h3,.course-card p,.course-card .course-price,.course-card .course-meta,.course-card .course-cta{margin-left:32px;margin-right:32px}
+.course-card .course-badge{margin-top:28px}
+.seminar-visual{margin:28px 0 36px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)}
+.seminar-visual img{width:100%;height:280px;object-fit:cover;display:block;filter:grayscale(.15) contrast(1.05)}
 .course-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.08);border-color:var(--gold)}
 .course-badge{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dark);background:rgba(196,162,101,0.1);display:inline-block;padding:4px 12px;margin-bottom:20px;align-self:flex-start}
 .course-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--charcoal);margin-bottom:12px}
@@ -97,6 +103,7 @@
     <p class="section-desc">Study on your own schedule with unlimited lifetime access to our video-based courses.</p>
     <div class="online-grid">
       <div class="course-card reveal">
+        <div class="course-card__image"><img src="images/course-pelvis.jpg" alt="Pelvis 1.0 anatomy"></div>
         <span class="course-badge">Self-Paced</span>
         <h3>Pelvis 1.0</h3>
         <p>Foundational understanding of pelvic anatomy, assessment, and treatment principles. Your starting point for the pelvis-centered approach.</p>
@@ -105,6 +112,7 @@
         <a href="https://www.linkprosport.com/pelvis-10" class="course-cta" target="_blank">Enroll Now</a>
       </div>
       <div class="course-card reveal">
+        <div class="course-card__image"><img src="images/course-pelvis-advanced.jpg" alt="Advanced pelvic assessment"></div>
         <span class="course-badge">Self-Paced</span>
         <h3>Pelvis 3.0</h3>
         <p>Advanced pelvic expertise — address complex cases and build targeted strength. Three in-depth video lessons totaling 3+ hours.</p>
@@ -112,6 +120,7 @@
         <a href="https://www.linkprosport.com/courses/pelvis" class="course-cta" target="_blank">Learn More</a>
       </div>
       <div class="course-card reveal">
+        <div class="course-card__image"><img src="images/course-lower-limb.jpg" alt="Lower limb kinetic chain"></div>
         <span class="course-badge">Self-Paced</span>
         <h3>Lower Limb Injury Prevention</h3>
         <p>Comprehensive protocols for preventing and addressing lower limb injuries through fascial chain assessment and targeted intervention.</p>
@@ -128,6 +137,7 @@
     <div class="label" style="color:var(--gold)">In-Person Seminars</div>
     <h2 style="font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;margin-bottom:8px">Hands-On <em style="font-style:italic;color:var(--gold)">Intensive Training</em></h2>
     <p style="font-size:.95rem;color:rgba(255,255,255,0.45);max-width:600px">For practitioners ready to transform their approach to fascial chain treatment and 2TLS technique.</p>
+    <div class="seminar-visual"><img src="images/seminar-hands.jpg" alt="Hands-on fascial seminar"></div>
 
     <div class="seminars" id="upcoming">
       <div class="seminar reveal">
