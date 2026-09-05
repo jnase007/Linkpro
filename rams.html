@@ -45,38 +45,29 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ── NAV ── */
 .nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 2000;
   padding: 20px 0;
-  background: rgba(0, 31, 91, 0.92);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255, 209, 0, 0.18);
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(196, 162, 101, 0.15);
 }
 .nav-inner {
-  max-width: var(--max); margin: 0 auto; padding: 0 var(--side);
+  max-width: 1440px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 80px);
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo{display:flex;align-items:center;gap:14px;font-family:Inter, sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:.15em;color:#fff;text-transform:uppercase}.nav-logo span{color:inherit}.logo-mark{width:36px;height:36px;display:block;flex-shrink:0}.logo-mark svg{width:100%;height:100%;display:block}.nav-logo{font-family:'Inter',sans-serif;}
-.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:Inter, sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:.15em;color:#fff;text-transform:uppercase}.nav-logo span{color:inherit}.logo-mark{width:36px;height:36px;display:block;flex-shrink:0;object-fit:contain}.nav-logo{font-family:'Inter',sans-serif;}
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
 .nav-links a {
-  font-size: 0.72rem; font-weight: 500;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
   transition: color 0.3s;
 }
 .nav-links a:hover,
 .nav-links a.active { color: var(--white); }
-.nav-cta {
-  color: var(--ink) !important;
-  background: var(--rams-gold);
-  padding: 0.55rem 1.25rem;
-  font-weight: 600 !important;
-  transition: background 0.3s, transform 0.3s !important;
-}
-.nav-cta:hover {
-  background: var(--rams-gold-dim);
-  transform: translateY(-1px);
-}
+.nav-cta{font-size:.7rem!important;font-weight:600!important;letter-spacing:.15em!important;text-transform:uppercase;color:#1A1A1A!important;background:#C4A265;padding:12px 28px!important;border:1px solid #C4A265;transition:all .4s}
+.nav-cta:hover{background:transparent;color:#C4A265!important}
 .nav-dropdown { position: relative; overflow: visible; }
 .nav, .nav-inner, .nav-links { overflow: visible; }
 .nav-dropdown>a::before{content:'';display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid var(--gold);margin-right:8px;transform:translateY(-1px)}
@@ -473,7 +464,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 2L38 35H2L20 2Z" stroke="#C4A265" stroke-width="1.5" fill="none"/><path d="M20 10L31 31H9L20 10Z" stroke="#C4A265" stroke-width="0.8" fill="none" opacity="0.5"/><line x1="20" y1="2" x2="20" y2="35" stroke="#C4A265" stroke-width="0.5" opacity="0.3"/></svg></span>LINK Pro</a>
+    <a href="index.html" class="nav-logo"><img class="logo-mark" src="images/logo.svg" alt="">LINK Pro</a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
       <li class="nav-dropdown">
@@ -565,7 +556,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <footer class="footer">
   <div class="footer-inner">
-    <a href="index.html" class="footer-logo"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 2L38 35H2L20 2Z" stroke="#C4A265" stroke-width="1.5" fill="none"/><path d="M20 10L31 31H9L20 10Z" stroke="#C4A265" stroke-width="0.8" fill="none" opacity="0.5"/><line x1="20" y1="2" x2="20" y2="35" stroke="#C4A265" stroke-width="0.5" opacity="0.3"/></svg></span>LINK Pro</a>
+    <a href="index.html" class="footer-logo"><img class="logo-mark" src="images/logo.svg" alt="">LINK Pro</a>
     <p>&copy; 2026 LINK Pro. All rights reserved.</p>
     <div class="footer-links">
       <a href="index.html">Home</a>
