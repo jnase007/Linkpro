@@ -98,7 +98,19 @@ a{text-decoration:none;color:inherit}
   .nav-cluster,.nav-links{display:none}
   .about-intro,.team-grid{grid-template-columns:1fr}
 }
-@media(min-width:769px){.hamburger{display:none!important}.mobile-nav{display:none}}.nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}@media(max-width:768px){.nav-cta{padding:10px 16px;font-size:.62rem}}</style>
+@media(min-width:769px){.hamburger{display:none!important}.mobile-nav{display:none}}.nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}@media(max-width:768px){.nav-cta{padding:10px 16px;font-size:.62rem}}
+.page-hero{position:relative;overflow:hidden;background:#0a0a0a}
+.page-hero>.container{position:relative;z-index:2}
+.page-hero__lines{position:absolute;inset:0;z-index:0;pointer-events:none}
+.page-hero__lines svg{width:100%;height:100%;display:block}
+.page-hero__lines path{fill:none;stroke:#C4A265;stroke-linecap:round;stroke-linejoin:round}
+.page-hero__flow{stroke-width:1.15;stroke-opacity:.26;stroke-dasharray:16 240;animation:pageHeroFlow 24s linear infinite}
+.page-hero__flow2{stroke-width:.65;stroke-opacity:.12;stroke-dasharray:10 180;animation:pageHeroFlow 36s linear infinite reverse}
+.page-hero__still{stroke-width:.5;stroke-opacity:.08}
+.page-hero__veil{position:absolute;inset:0;background:radial-gradient(ellipse 68% 78% at 50% 48%,rgba(10,10,10,.88) 0%,rgba(10,10,10,.42) 58%,rgba(10,10,10,.7) 100%)}
+@keyframes pageHeroFlow{to{stroke-dashoffset:-256}}
+@media (prefers-reduced-motion:reduce){.page-hero__flow,.page-hero__flow2{animation:none;stroke-dasharray:none}}
+</style>
 </head>
 <body>
 
@@ -136,6 +148,7 @@ a{text-decoration:none;color:inherit}
 </nav><div class="mobile-nav" id="mobileNav"><a href="about.html">About</a><a href="services.html">Services</a><a href="somatherapy.html">SomaTherapy</a><a href="classes.html">Classes</a><a href="courses.html">Courses</a><a href="blog.html">Blog</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><a href="index.html#contact" class="mobile-nav__cta">Book Now</a></div>
 
 <section class="page-hero">
+  <div class="page-hero__lines" aria-hidden="true"><svg viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" focusable="false"><path class="page-hero__still" d="M-40,310 C180,250 360,120 620,150 C880,180 1040,300 1500,220"/><path class="page-hero__still" d="M-20,80 C220,160 480,40 760,90 C1040,140 1220,40 1480,110"/><path class="page-hero__flow" d="M-60,240 C160,180 340,70 610,110 C900,154 1120,280 1520,190"/><path class="page-hero__flow" d="M-40,360 C200,300 420,210 700,250 C980,290 1180,200 1500,260"/><path class="page-hero__flow2" d="M-80,140 C140,90 380,210 640,160 C920,108 1160,40 1540,120"/><path class="page-hero__flow2" d="M40,400 C280,340 520,380 780,320 C1040,260 1280,340 1480,300"/></svg><div class="page-hero__veil"></div></div>
   <div class="container">
     <p class="label" style="justify-content:center;margin-bottom:24px">Who We Are</p>
     <h1>Redefining What It Means to <em>Move, Perform & Heal</em></h1>
