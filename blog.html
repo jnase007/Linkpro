@@ -19,7 +19,7 @@ html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--charcoal);b
 .label{font-size:.65rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
 .blog{padding:40px 0 120px}
 .blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:900px;margin:0 auto}
-.post-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;transition:all .4s var(--transition);overflow:hidden}
+.post-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;transition:all .4s var(--transition);overflow:hidden;color:inherit;cursor:pointer}
 .post-card:hover{border-color:rgba(196,162,101,0.25);transform:translateY(-4px)}
 .post-card__image{height:200px;background:linear-gradient(135deg,var(--charcoal) 0%,#2a2218 100%);position:relative;overflow:hidden}
 .post-card__image img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.15) contrast(1.05)}
@@ -74,24 +74,24 @@ html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--charcoal);b
 <section class="blog">
   <div class="container">
     <div class="blog-grid">
-      <article class="post-card reveal">
+      <a class="post-card reveal" href="blog/your-pain-has-an-address.html">
         <div class="post-card__image"><img src="images/blog/pain-origin.jpg" alt="Referred pain tracing back to the pelvis"><span class="post-card__tag">Philosophy</span></div>
         <div class="post-card__body">
           <p class="post-card__meta">August 25, 2026 · 8 min read</p>
           <h2>Your Pain Has an Address — and It's Probably Not Where You Think</h2>
           <p>Recurring injuries aren't random. They're signals — and the source is almost never where you feel it. How LINK Pro traces dysfunction to its origin.</p>
-          <a href="blog/your-pain-has-an-address.html" class="post-card__link">Read Article →</a>
+          <span class="post-card__link">Read Article →</span>
         </div>
-      </article>
-      <article class="post-card reveal">
+      </a>
+      <a class="post-card reveal" href="blog/what-pro-teams-know-about-the-pelvis.html">
         <div class="post-card__image"><img src="images/blog/pro-pelvis.jpg" alt="Athletic power generated from the pelvis"><span class="post-card__tag">Performance</span></div>
         <div class="post-card__body">
           <p class="post-card__meta">August 25, 2026 · 9 min read</p>
           <h2>What Pro Teams Already Know About the Pelvis</h2>
           <p>From NBA training staff to Olympic hopefuls — why elite performers are rethinking movement from the pelvis out, and what that looks like in practice.</p>
-          <a href="blog/what-pro-teams-know-about-the-pelvis.html" class="post-card__link">Read Article →</a>
+          <span class="post-card__link">Read Article →</span>
         </div>
-      </article>
+      </a>
     </div>
   </div>
 </section>
