@@ -1,6 +1,11 @@
 (function () {
   var quotes = [
     {
+      q: "I've taken all three of my kids to Dr. Jason Amstutz at LINK Pro, and I would recommend him to anyone — especially parents. He caught issues early, before they turned into bigger problems.",
+      a: "Justin N.",
+      r: "Google review · Parent"
+    },
+    {
       q: "This review of Link Medical Center is long overdue. About 5 years ago, I suddenly could barely walk. I had always been active — walking, yoga, body pump. What felt like a little discomfort escalated to the point of barely being able to walk.",
       a: "Deets",
       r: "Google review"
