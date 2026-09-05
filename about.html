@@ -52,6 +52,11 @@ a{text-decoration:none;color:inherit}
 
 /* ABOUT CONTENT */
 .about-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;padding:80px 0}
+.about-right{display:flex;flex-direction:column;gap:32px}
+.league-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;align-items:center;justify-items:center;padding:8px 4px 12px}
+.league-grid img{display:block;height:78px;width:auto;max-width:100%;object-fit:contain}
+.league-grid img[alt="49ers"]{height:52px}
+@media(max-width:768px){.league-grid{gap:20px 24px}.league-grid img{height:64px}.league-grid img[alt="49ers"]{height:42px}}
 .about-text h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;color:var(--charcoal);margin-bottom:24px;line-height:1.25}
 .about-text h2 em{font-style:italic;color:var(--gold-dark)}
 .about-text p{font-size:.95rem;line-height:1.8;color:rgba(26,26,26,0.65);margin-bottom:16px}
@@ -59,10 +64,7 @@ a{text-decoration:none;color:inherit}
 .about-sidebar blockquote{font-family:var(--serif);font-size:1.2rem;font-style:italic;line-height:1.6;color:rgba(255,255,255,0.8);margin-bottom:20px}
 .about-sidebar cite{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-style:normal}
 
-.league-row{display:flex;align-items:center;justify-content:center;gap:clamp(28px,6vw,72px);padding:8px 0 72px;flex-wrap:wrap}
-.league-lockup{display:flex;align-items:center;justify-content:center;color:var(--charcoal)}
-.league-lockup svg{display:block;height:88px;width:auto}
-@media(max-width:768px){.league-row{gap:24px;padding:0 0 48px}.league-lockup svg{height:64px}}
+
 
 /* TEAM */
 .team{padding:80px 0;background:var(--charcoal)}
@@ -227,51 +229,18 @@ a{text-decoration:none;color:inherit}
         <p>Dr. Jason Amstutz, along with our expert team, is dedicated to providing innovative care and education based on years of study and mentorship under world-renowned osteopath Guy Voyer, DO.</p>
         <p>Guided by the principles of BioTensegrity, we emphasize the importance of fluidity and elasticity in tissues, helping patients achieve long-lasting results by rehydrating and restoring movement at the deepest levels of the body.</p>
       </div>
-      <div class="about-sidebar reveal">
-        <blockquote>"We believe education is key — empowering our patients to become their own best therapists."</blockquote>
-        <cite>— Dr. Jason Amstutz</cite>
+      <div class="about-right">
+        <div class="about-sidebar reveal">
+          <blockquote>"We believe education is key — empowering our patients to become their own best therapists."</blockquote>
+          <cite>— Dr. Jason Amstutz</cite>
+        </div>
+        <div class="league-grid" aria-label="League and team affiliations">
+          <img src="images/affiliations/nfl.png" alt="NFL">
+          <img src="images/affiliations/nhl.png" alt="NHL">
+          <img src="images/affiliations/hawks.png" alt="Hawks">
+          <img src="images/affiliations/49ers.png" alt="49ers">
+        </div>
       </div>
-    </div>
-    <div class="league-row" aria-label="League and team affiliations">
-      <div class="league-lockup" aria-label="NFL">
-        <svg viewBox="0 0 120 148" fill="none" aria-hidden="true">
-          <path d="M60 4 L114 24 V80 C114 116 86 136 60 146 C34 136 6 116 6 80 V24 Z" fill="#1A1A1A"/>
-          <path d="M60 14 L104 32 V78 C104 108 82 126 60 136 C38 126 16 108 16 78 V32 Z" fill="#FDFCFA"/>
-          <ellipse cx="60" cy="62" rx="24" ry="14" fill="#1A1A1A"/>
-          <path d="M44 56 C52 62 68 62 76 56 M44 68 C52 62 68 62 76 68" stroke="#FDFCFA" stroke-width="1.4" fill="none"/>
-          <path d="M60 48 V76" stroke="#FDFCFA" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M56 52h8 M55 57h10 M55 62h10 M56 67h8" stroke="#FDFCFA" stroke-width="1.1" stroke-linecap="round"/>
-          <text x="60" y="108" text-anchor="middle" fill="#1A1A1A" font-family="Inter,Helvetica,sans-serif" font-size="22" font-weight="800" letter-spacing="4">NFL</text>
-        </svg>
-      </div>
-      <div class="league-lockup" aria-label="NHL">
-        <svg viewBox="0 0 120 148" fill="none" aria-hidden="true">
-          <path d="M60 6 L112 26 V78 C112 114 86 134 60 144 C34 134 8 114 8 78 V26 Z" fill="#1A1A1A"/>
-          <path d="M60 16 L102 34 V76 C102 106 82 124 60 134 C38 124 18 106 18 76 V34 Z" fill="#FDFCFA"/>
-          <path d="M22 92 L98 48 L102 58 L26 102 Z" fill="#1A1A1A"/>
-          <text x="60" y="84" text-anchor="middle" transform="rotate(-28 60 78)" fill="#FDFCFA" font-family="Inter,Helvetica,sans-serif" font-size="22" font-weight="800" letter-spacing="3">NHL</text>
-        </svg>
-      </div>
-      <div class="league-lockup" aria-label="Hawks">
-        <svg viewBox="0 0 148 148" fill="none" aria-hidden="true">
-          <circle cx="74" cy="74" r="70" fill="#1A1A1A"/>
-          <circle cx="74" cy="74" r="62" fill="#FDFCFA"/>
-          <circle cx="74" cy="74" r="52" fill="#1A1A1A"/>
-          <path d="M38 76 L72 50 L86 58 L78 76 L86 94 L72 102 Z" fill="#FDFCFA"/>
-          <path d="M78 62 L108 50 L96 76 L108 102 L78 90 Z" fill="#FDFCFA"/>
-          <circle cx="66" cy="70" r="3.2" fill="#1A1A1A"/>
-          <text x="74" y="128" text-anchor="middle" fill="#1A1A1A" font-family="Inter,Helvetica,sans-serif" font-size="11" font-weight="800" letter-spacing="2.6">HAWKS</text>
-        </svg>
-      </div>
-      <div class="league-lockup" aria-label="49ers">
-        <svg viewBox="0 0 148 148" fill="none" aria-hidden="true">
-          <ellipse cx="74" cy="74" rx="68" ry="58" fill="#1A1A1A"/>
-          <ellipse cx="74" cy="74" rx="60" ry="50" fill="#FDFCFA"/>
-          <ellipse cx="74" cy="74" rx="54" ry="44" fill="none" stroke="#1A1A1A" stroke-width="2.4"/>
-          <text x="74" y="88" text-anchor="middle" fill="#1A1A1A" font-family="Inter,Helvetica,sans-serif" font-size="42" font-weight="800" letter-spacing="-2">SF</text>
-        </svg>
-      </div>
-    </div>
   </div>
 </section>
 
