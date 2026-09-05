@@ -24,12 +24,14 @@
 .content blockquote{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--gold);padding-left:20px;margin:28px 0}
 .content ul{list-style:none;margin:16px 0 24px}
 .content li{padding:8px 0 8px 20px;font-size:.9rem;color:rgba(26,26,26,0.6);position:relative;line-height:1.7}
-.content li::before{content:'✦';position:absolute;left:0;color:var(--gold-dark);font-size:.55rem;top:12px}
+.content li::before{content:'';position:absolute;left:0;top:16px;width:8px;height:1px;background:var(--gold-dark)}
 .content li strong{color:var(--charcoal)}
 .video-wrap{position:relative;padding-bottom:56.25%;height:0;margin:16px 0 36px;background:#0D0D0D;border:1px solid rgba(0,0,0,0.06);overflow:hidden}
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .principles{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:32px 0}
 .principle-card{background:#fff;padding:32px;border:1px solid rgba(0,0,0,0.06)}
+.principle-icon{width:28px;height:28px;display:block;margin-bottom:16px;color:var(--gold-dark)}
+.principle-icon svg{width:100%;height:100%;display:block}
 .principle-card h4{font-family:var(--serif);font-size:1.1rem;color:var(--charcoal);margin-bottom:8px}
 .principle-card p{font-size:.85rem;margin-bottom:0}
 .highlight-box{background:var(--charcoal);padding:40px;margin:40px 0;color:#fff}
@@ -94,11 +96,13 @@
       <p>At its core, SomaTherapy is based on two essential principles for optimal health and performance:</p>
       <div class="principles">
         <div class="principle-card">
-          <h4>✅ Space</h4>
+          <span class="principle-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 4H4v6M22 4h6v6M10 28H4v-6M22 28h6v-6"/><rect x="10" y="10" width="12" height="12"/></svg></span>
+          <h4>Space</h4>
           <p>Within the joints and tissues — creating room for movement, fluid flow, and healing.</p>
         </div>
         <div class="principle-card">
-          <h4>✅ Flow</h4>
+          <span class="principle-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 11c4-5 7 5 11 0s7 5 11 0 4-5 4-5M3 21c4-5 7 5 11 0s7 5 11 0 4-5 4-5"/></svg></span>
+          <h4>Flow</h4>
           <p>Of fluids throughout the body — lymph, synovial, interstitial, and cerebrospinal fluids.</p>
         </div>
       </div>
