@@ -460,7 +460,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .hero__media { max-height: 280px; }
   .hero__horn { right: -30%; top: 0; opacity: 0.6; }
 }
-@media(min-width:769px){.hamburger{display:none!important}.mobile-nav{display:none}}</style>
+@media(min-width:769px){.hamburger{display:none!important}.mobile-nav{display:none}}.nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}@media(max-width:768px){.nav-cta{padding:10px 16px;font-size:.62rem}}</style>
 </head>
 <body>
 
@@ -490,10 +490,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <li><a href="contact.html">Contact</a></li>
       <li><a href="rams.html" class="active">Rams</a></li>
 </ul>
-    <a href="#coach" class="nav-cta">Coach the Rams</a>
+    
     </div>
   
-<button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+
+<div class="nav-actions"><a href="#coach" class="nav-cta">Coach the Rams</a><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
 </div>
 </nav><div class="mobile-nav" id="mobileNav"><a href="about.html">About</a><a href="services.html">Services</a><a href="somatherapy.html">SomaTherapy</a><a href="classes.html">Classes</a><a href="courses.html">Courses</a><a href="blog.html">Blog</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><a href="#coach" class="mobile-nav__cta">Coach the Rams</a></div>
 

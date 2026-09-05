@@ -32,7 +32,7 @@ body{font-family:var(--sans);color:rgba(255,255,255,0.75);background:var(--black
 .btn{display:inline-block;padding:14px 32px;font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:var(--gold);color:var(--black);transition:opacity .3s}.btn:hover{opacity:.85}
 .footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);padding:48px 0 24px}.footer .container{max-width:1100px}.footer-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}.footer-logo{display:flex;align-items:center;gap:12px;font-size:.9rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#fff}.footer-logo .logo-mark{width:28px;height:28px}.footer p{font-size:.75rem;color:var(--muted)}.footer-links{display:flex;gap:24px}.footer-links a{font-size:.7rem;color:var(--muted);transition:color .3s}.footer-links a:hover,.footer-links a.active{color:var(--gold)}
 .hamburger{display:flex;flex-direction:column;justify-content:center;gap:6px;width:28px;height:28px;z-index:2100;position:relative;background:transparent;border:0;padding:0;cursor:pointer;flex-shrink:0}.hamburger span{display:block;width:100%;height:1.5px;background:#fff;transition:all .4s cubic-bezier(0.25,0.46,0.45,0.94);transform-origin:center}.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}.mobile-nav{position:fixed;inset:0;z-index:999;background:rgba(26,26,26,.98);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity .5s}.mobile-nav.open{opacity:1;pointer-events:all}.mobile-nav a{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.2rem);font-weight:400;color:#fff;letter-spacing:.02em}.mobile-nav a:hover{color:var(--gold)}.mobile-nav__cta{font-family:var(--sans)!important;font-size:.75rem!important;font-weight:600!important;letter-spacing:.18em!important;text-transform:uppercase;color:#FDFCFA!important;background:#C4A265;padding:16px 40px}@media(max-width:768px){.nav-cluster,.nav-links{display:none}}
-@media(min-width:769px){.hamburger{display:none!important}.mobile-nav{display:none}}</style>
+@media(min-width:769px){.hamburger{display:none!important}.mobile-nav{display:none}}.nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}@media(max-width:768px){.nav-cta{padding:10px 16px;font-size:.62rem}}</style>
 </head>
 <body>
 
@@ -61,10 +61,11 @@ body{font-family:var(--sans);color:rgba(255,255,255,0.75);background:var(--black
       <li><a href="../reviews.html">Reviews</a></li>
       <li><a href="../contact.html">Contact</a></li>
     </ul>
-    <a href="../index.html#contact" class="nav-cta">Book Now</a>
+    
     </div>
   
-<button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+
+<div class="nav-actions"><a href="../index.html#contact" class="nav-cta">Book Now</a><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
 </div>
 </nav><div class="mobile-nav" id="mobileNav"><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../somatherapy.html">SomaTherapy</a><a href="../classes.html">Classes</a><a href="../courses.html">Courses</a><a href="../blog.html">Blog</a><a href="../reviews.html">Reviews</a><a href="../contact.html">Contact</a><a href="../index.html#contact" class="mobile-nav__cta">Book Now</a></div>
 

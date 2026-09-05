@@ -1235,6 +1235,8 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .nav__links { display: none; }
   .hamburger { display: flex; }
+  .nav__inner { gap: 12px; }
+  .nav__cta { padding: 10px 16px; font-size: 0.62rem; letter-spacing: 0.14em; }
   .hero__accent { display: none; }
   .courses__online-grid { grid-template-columns: 1fr; }
   .seminar-card { flex-direction: column; text-align: center; gap: 20px; padding: 28px 24px; }
@@ -1299,8 +1301,8 @@ ul { list-style: none; }
       <a href="blog.html">Blog</a>
       <a href="reviews.html">Reviews</a>
       <a href="contact.html">Contact</a>
-      <a href="#contact" class="nav__cta">Book Now</a>
     </div>
+    <a href="#contact" class="nav__cta">Book Now</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
