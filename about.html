@@ -59,10 +59,10 @@ a{text-decoration:none;color:inherit}
 .about-sidebar blockquote{font-family:var(--serif);font-size:1.2rem;font-style:italic;line-height:1.6;color:rgba(255,255,255,0.8);margin-bottom:20px}
 .about-sidebar cite{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-style:normal}
 
-.league-row{display:flex;align-items:center;justify-content:flex-start;gap:22px;padding:28px 0 0;margin-top:28px;border-top:1px solid rgba(196,162,101,.22);flex-wrap:wrap}
+.league-row{display:flex;align-items:center;justify-content:center;gap:clamp(28px,6vw,72px);padding:8px 0 72px;flex-wrap:wrap}
 .league-lockup{display:flex;align-items:center;justify-content:center;color:var(--charcoal)}
-.league-lockup svg{display:block;height:64px;width:auto;filter:drop-shadow(0 1px 0 rgba(26,26,26,.12))}
-@media(max-width:768px){.league-row{gap:18px;padding-top:24px}.league-lockup svg{height:52px}}
+.league-lockup svg{display:block;height:88px;width:auto}
+@media(max-width:768px){.league-row{gap:24px;padding:0 0 48px}.league-lockup svg{height:64px}}
 
 /* TEAM */
 .team{padding:80px 0;background:var(--charcoal)}
@@ -226,7 +226,13 @@ a{text-decoration:none;color:inherit}
         <p>Our philosophy is rooted in a deep understanding of anatomy, physiology, and the fluid dynamics that govern the body's function. This approach allows us to <em>uncover the root causes of pain, dysfunction, and performance issues — not just treat symptoms.</em></p>
         <p>Dr. Jason Amstutz, along with our expert team, is dedicated to providing innovative care and education based on years of study and mentorship under world-renowned osteopath Guy Voyer, DO.</p>
         <p>Guided by the principles of BioTensegrity, we emphasize the importance of fluidity and elasticity in tissues, helping patients achieve long-lasting results by rehydrating and restoring movement at the deepest levels of the body.</p>
-        <div class="league-row" aria-label="League and team affiliations">
+      </div>
+      <div class="about-sidebar reveal">
+        <blockquote>"We believe education is key — empowering our patients to become their own best therapists."</blockquote>
+        <cite>— Dr. Jason Amstutz</cite>
+      </div>
+    </div>
+    <div class="league-row" aria-label="League and team affiliations">
       <div class="league-lockup" aria-label="NFL">
         <svg viewBox="0 0 120 148" fill="none" aria-hidden="true">
           <path d="M60 4 L114 24 V80 C114 116 86 136 60 146 C34 136 6 116 6 80 V24 Z" fill="#1A1A1A"/>
@@ -264,12 +270,6 @@ a{text-decoration:none;color:inherit}
           <ellipse cx="74" cy="74" rx="54" ry="44" fill="none" stroke="#1A1A1A" stroke-width="2.4"/>
           <text x="74" y="88" text-anchor="middle" fill="#1A1A1A" font-family="Inter,Helvetica,sans-serif" font-size="42" font-weight="800" letter-spacing="-2">SF</text>
         </svg>
-      </div>
-        </div>
-      </div>
-      <div class="about-sidebar reveal">
-        <blockquote>"We believe education is key — empowering our patients to become their own best therapists."</blockquote>
-        <cite>— Dr. Jason Amstutz</cite>
       </div>
     </div>
   </div>
