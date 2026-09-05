@@ -59,6 +59,12 @@ a{text-decoration:none;color:inherit}
 .about-sidebar blockquote{font-family:var(--serif);font-size:1.2rem;font-style:italic;line-height:1.6;color:rgba(255,255,255,0.8);margin-bottom:20px}
 .about-sidebar cite{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-style:normal}
 
+.league-row{display:flex;align-items:center;justify-content:center;gap:clamp(56px,12vw,140px);padding:56px 0 8px;margin-top:8px;border-top:1px solid rgba(196,162,101,.22)}
+.league-lockup{display:flex;align-items:center;justify-content:center;color:var(--charcoal)}
+.league-lockup svg{display:block;height:92px;width:auto}
+.league-lockup--nhl svg{height:54px}
+@media(max-width:768px){.league-row{gap:36px;padding-top:40px;flex-wrap:wrap}.league-lockup svg{height:72px}.league-lockup--nhl svg{height:42px}}
+
 /* TEAM */
 .team{padding:80px 0;background:var(--charcoal)}
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
@@ -225,6 +231,27 @@ a{text-decoration:none;color:inherit}
       <div class="about-sidebar reveal">
         <blockquote>"We believe education is key — empowering our patients to become their own best therapists."</blockquote>
         <cite>— Dr. Jason Amstutz</cite>
+      </div>
+    </div>
+    <div class="league-row" aria-label="NFL and NHL affiliations">
+      <div class="league-lockup" aria-label="NFL">
+        <svg viewBox="0 0 140 160" fill="none" aria-hidden="true">
+          <path d="M70 6 L132 28 V84 C132 122 102 148 70 156 C38 148 8 122 8 84 V28 Z" fill="#1A1A1A"/>
+          <path d="M70 18 L118 36 V82 C118 112 96 134 70 142 C44 134 22 112 22 82 V36 Z" fill="#FDFCFA"/>
+          <path d="M46 34 L70 26 L94 34 L86 48 H54 Z" fill="#1A1A1A"/>
+          <path d="M70 30 L74 40 H66 Z" fill="#FDFCFA"/>
+          <ellipse cx="70" cy="80" rx="28" ry="17" fill="#1A1A1A"/>
+          <path d="M50 74 C62 80 78 80 90 74 M50 86 C62 80 78 80 90 86" stroke="#FDFCFA" stroke-width="1.5" fill="none"/>
+          <path d="M70 63 V97" stroke="#FDFCFA" stroke-width="1.7"/>
+          <text x="70" y="124" text-anchor="middle" fill="#1A1A1A" font-family="Inter,Helvetica,sans-serif" font-size="22" font-weight="800" letter-spacing="3.5">NFL</text>
+          <rect x="38" y="132" width="64" height="14" fill="#1A1A1A"/>
+          <text x="70" y="142" text-anchor="middle" fill="#FDFCFA" font-family="Inter,Helvetica,sans-serif" font-size="8" font-weight="700" letter-spacing="2.4">FOOTBALL</text>
+        </svg>
+      </div>
+      <div class="league-lockup league-lockup--nhl" aria-label="NHL">
+        <svg viewBox="0 0 220 64" fill="none" aria-hidden="true">
+          <text x="110" y="48" text-anchor="middle" fill="#1A1A1A" font-family="'Playfair Display',Georgia,serif" font-size="52" font-weight="700" letter-spacing="6">NHL</text>
+        </svg>
       </div>
     </div>
   </div>
