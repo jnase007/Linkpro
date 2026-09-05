@@ -53,12 +53,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   max-width: var(--max); margin: 0 auto; padding: 0 var(--side);
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo {
-  font-family: var(--serif);
-  font-size: 1.6rem; letter-spacing: 0.08em;
-  color: var(--white);
-}
-.nav-logo span { color: var(--rams-gold); }
+.nav-logo{display:flex;align-items:center;gap:14px;font-family:Inter, sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:.15em;color:#fff;text-transform:uppercase}.nav-logo span{color:inherit}.logo-mark{width:36px;height:36px;display:block;flex-shrink:0}.logo-mark svg{width:100%;height:100%;display:block}.nav-logo{font-family:'Inter',sans-serif;}
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a {
   font-size: 0.72rem; font-weight: 500;
@@ -424,12 +419,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex; justify-content: space-between; align-items: center;
   flex-wrap: wrap; gap: 20px;
 }
-.footer-logo {
-  font-family: var(--serif);
-  font-size: 1.25rem; letter-spacing: 0.08em;
-  color: var(--white);
-}
-.footer-logo span { color: var(--rams-gold); }
+.footer-logo{display:flex;align-items:center;gap:12px;font-size:.9rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#fff}.footer-logo span{color:inherit}.footer-logo .logo-mark{width:28px;height:28px}
 .footer p { font-size: 0.75rem; color: var(--muted); }
 .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
 .footer-links a {
@@ -477,7 +467,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">LINK <span>PRO</span></a>
+    <a href="index.html" class="nav-logo"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 2L38 35H2L20 2Z" stroke="#C4A265" stroke-width="1.5" fill="none"/><path d="M20 10L31 31H9L20 10Z" stroke="#C4A265" stroke-width="0.8" fill="none" opacity="0.5"/><line x1="20" y1="2" x2="20" y2="35" stroke="#C4A265" stroke-width="0.5" opacity="0.3"/></svg></span>LINK Pro</a>
     <ul class="nav-links">
       <li class="nav-dropdown">
         <a href="#">What We Do</a>
@@ -567,7 +557,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <footer class="footer">
   <div class="footer-inner">
-    <a href="index.html" class="footer-logo">LINK <span>PRO</span></a>
+    <a href="index.html" class="footer-logo"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 2L38 35H2L20 2Z" stroke="#C4A265" stroke-width="1.5" fill="none"/><path d="M20 10L31 31H9L20 10Z" stroke="#C4A265" stroke-width="0.8" fill="none" opacity="0.5"/><line x1="20" y1="2" x2="20" y2="35" stroke="#C4A265" stroke-width="0.5" opacity="0.3"/></svg></span>LINK Pro</a>
     <p>&copy; 2026 LINK Pro. All rights reserved.</p>
     <div class="footer-links">
       <a href="index.html">Home</a>
