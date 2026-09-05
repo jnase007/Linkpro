@@ -18,9 +18,10 @@ html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--charcoal);b
 .blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:900px;margin:0 auto}
 .post-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;transition:all .4s var(--transition);overflow:hidden}
 .post-card:hover{border-color:rgba(196,162,101,0.25);transform:translateY(-4px)}
-.post-card__image{height:200px;background:linear-gradient(135deg,var(--charcoal) 0%,#2a2218 100%);display:flex;align-items:flex-end;padding:24px;position:relative}
-.post-card__image::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(13,13,13,0.8) 100%)}
-.post-card__tag{position:relative;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.post-card__image{height:200px;background:linear-gradient(135deg,var(--charcoal) 0%,#2a2218 100%);position:relative;overflow:hidden}
+.post-card__image img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.15) contrast(1.05)}
+.post-card__image::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(13,13,13,0.82) 100%);z-index:1}
+.post-card__tag{position:absolute;left:24px;bottom:20px;z-index:2;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
 .post-card__body{padding:28px 28px 32px;flex:1;display:flex;flex-direction:column}
 .post-card__meta{font-size:.72rem;color:var(--muted);margin-bottom:12px;letter-spacing:.04em}
 .post-card h2{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#fff;line-height:1.35;margin-bottom:14px}
@@ -49,7 +50,7 @@ html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--charcoal);b
   <div class="container">
     <div class="blog-grid">
       <article class="post-card reveal">
-        <div class="post-card__image"><span class="post-card__tag">Philosophy</span></div>
+        <div class="post-card__image"><img src="images/blog/pain-origin.jpg" alt="Referred pain tracing back to the pelvis"><span class="post-card__tag">Philosophy</span></div>
         <div class="post-card__body">
           <p class="post-card__meta">August 25, 2026 · 8 min read</p>
           <h2>Your Pain Has an Address — and It's Probably Not Where You Think</h2>
@@ -58,7 +59,7 @@ html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--charcoal);b
         </div>
       </article>
       <article class="post-card reveal">
-        <div class="post-card__image"><span class="post-card__tag">Performance</span></div>
+        <div class="post-card__image"><img src="images/blog/pro-pelvis.jpg" alt="Athletic power generated from the pelvis"><span class="post-card__tag">Performance</span></div>
         <div class="post-card__body">
           <p class="post-card__meta">August 25, 2026 · 9 min read</p>
           <h2>What Pro Teams Already Know About the Pelvis</h2>
