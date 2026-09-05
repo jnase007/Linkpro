@@ -1087,6 +1087,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
+  align-items: start;
   position: relative; z-index: 1;
 }
 .booking__form {
@@ -1133,28 +1134,29 @@ ul { list-style: none; }
 }
 
 .booking__info {
-  display: flex; flex-direction: column; gap: 32px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; align-content: start;
 }
 .info-card {
-  padding: 36px;
+  padding: 24px;
   background: var(--charcoal-light);
   border: 1px solid rgba(255,255,255,0.05);
   transition: border-color 0.3s ease;
 }
 .info-card:hover { border-color: rgba(196, 162, 101, 0.15); }
 .info-card__icon {
-  width: 40px; height: 40px; margin-bottom: 20px;
+  width: 32px; height: 32px; margin-bottom: 12px;
   color: var(--gold);
 }
-.info-card__icon svg { width: 24px; height: 24px; }
+.info-card__icon svg { width: 20px; height: 20px; }
 .info-card__title {
-  font-size: 0.68rem; font-weight: 600;
+  font-size: 0.62rem; font-weight: 600;
   letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 12px;
+  color: var(--gold); margin-bottom: 8px;
 }
 .info-card__text {
-  font-size: 0.95rem; font-weight: 300;
-  color: rgba(255,255,255,0.7); line-height: 1.7;
+  font-size: 0.88rem; font-weight: 300;
+  color: rgba(255,255,255,0.7); line-height: 1.6;
 }
 .info-card__text a {
   color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -1261,6 +1263,7 @@ ul { list-style: none; }
   .stats-bar__inner { grid-template-columns: 1fr 1fr; gap: 24px; }
   .hero__title { font-size: clamp(2.6rem, 12vw, 4rem); }
   .philosophy__quote { padding: 28px; }
+  .booking__info { grid-template-columns: 1fr; }
 }
 </style>
 </head>
