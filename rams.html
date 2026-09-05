@@ -74,7 +74,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--rams-gold-dim);
   transform: translateY(-1px);
 }
-.nav-dropdown { position: relative; }
+.nav-dropdown { position: relative; overflow: visible; }
+.nav, .nav-inner, .nav-links { overflow: visible; }
+.nav-dropdown>a::before{content:'';display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid var(--gold);margin-right:8px;transform:translateY(-1px)}
+.nav-dropdown-menu{z-index:2001;box-shadow:0 18px 40px rgba(0,0,0,.45)}
 .nav-dropdown-menu {
   display: none; position: absolute; top: 100%; left: 0;
   background: rgba(0, 31, 91, 0.98);
