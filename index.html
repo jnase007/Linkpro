@@ -1247,61 +1247,27 @@ ul { list-style: none; }
    FOOTER
    ═══════════════════════════════════════════════ */
 .footer {
-  padding: 60px 0 40px;
-  background: #111111;
+  background: #0D0D0D;
   border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 48px 0 24px;
 }
-.footer__inner {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 24px;
-}
-.footer__logo {
-  display: flex; align-items: center; gap: 12px;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem; font-weight: 600;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--white);
-}
-.footer__logo svg { width: 28px; height: 28px; }
-.footer__links {
-  display: flex; gap: 32px;
-}
-.footer__links a {
-  font-size: 0.72rem; font-weight: 400;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted); transition: color 0.3s ease;
-}
-.footer__links a:hover { color: var(--gold); }
-.footer__social {
-  display: flex; gap: 16px;
-}
-.footer__social a {
-  width: 40px; height: 40px;
-  border: 1px solid rgba(255,255,255,0.1);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--muted); transition: all 0.3s ease;
-}
-.footer__social a:hover {
-  border-color: var(--gold); color: var(--gold);
-}
-.footer__social svg { width: 16px; height: 16px; }
-.footer__bottom {
-  margin-top: 40px; padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  display: flex; align-items: center; justify-content: space-between;
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center;
   flex-wrap: wrap; gap: 16px;
 }
-.footer__copy {
-  font-size: 0.72rem; color: var(--muted);
+.footer-logo {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.9rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: #fff;
 }
-.footer__legal {
-  display: flex; gap: 24px;
+.footer-logo .logo-mark { width: 28px; height: 28px; display: block; flex-shrink: 0; object-fit: contain; }
+.footer p { font-size: 0.75rem; color: var(--muted); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a {
+  font-size: 0.7rem; color: var(--muted); transition: color 0.3s;
 }
-.footer__legal a {
-  font-size: 0.68rem; color: rgba(255,255,255,0.3);
-  transition: color 0.3s ease;
-}
-.footer__legal a:hover { color: var(--muted); }
+.footer-links a:hover, .footer-links a.active { color: var(--gold); }
 
 /* ═══════════════════════════════════════════════
    RESPONSIVE
@@ -1336,8 +1302,6 @@ ul { list-style: none; }
   .form__row { grid-template-columns: 1fr; }
   .difference__image { aspect-ratio: 16/9; }
   .drj__image { aspect-ratio: 16/10; order: -1; }
-  .footer__inner { flex-direction: column; align-items: flex-start; }
-  .footer__bottom { flex-direction: column; align-items: flex-start; }
   .booking__form { padding: 32px 24px; }
   .testimonial { padding: 36px 28px; }
   .service-card { padding: 36px 28px; }
@@ -2175,37 +2139,17 @@ ul { list-style: none; }
      FOOTER
      ═══════════════════════════════════════════════ -->
 <footer class="footer">
-  <div class="container container--wide">
-    <div class="footer__inner">
-      <a href="index.html" class="footer__logo">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 2L38 35H2L20 2Z" stroke="#C4A265" stroke-width="1.5" fill="none"/>
-          <path d="M20 10L31 31H9L20 10Z" stroke="#C4A265" stroke-width="0.8" fill="none" opacity="0.5"/>
-          <line x1="20" y1="2" x2="20" y2="35" stroke="#C4A265" stroke-width="0.5" opacity="0.3"/>
-        </svg>
-        LINK Pro
-      </a>
-      <div class="footer__links">
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="classes.html">Classes</a>
-        <a href="courses.html">Courses</a>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo"><img class="logo-mark" src="images/logo.svg" alt="">LINK Pro</a>
+      <p>&copy; 2026 LINK Pro. All rights reserved.</p>
+      <div class="footer-links">
         <a href="blog.html">Blog</a>
         <a href="rams.html">Rams</a>
         <a href="contact.html">Contact</a>
-        <a href="#contact">Book Now</a>
-      </div>
-      <div class="footer__social">
-        <a href="https://www.instagram.com/__linkpro/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div class="footer__copy">&copy; 2026 LINK Pro. All rights reserved.</div>
-      <div class="footer__legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="https://www.instagram.com/__linkpro/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
