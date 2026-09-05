@@ -737,13 +737,14 @@ ul { list-style: none; }
    ═══════════════════════════════════════════════ */
 .eldoa {
   padding: var(--section-pad) 0;
-  background: var(--charcoal);
+  background: #0a0a0a;
   position: relative; overflow: hidden;
 }
 .eldoa__bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(196, 162, 101, 0.04) 0%, transparent 60%);
+    linear-gradient(90deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.72) 42%, rgba(10,10,10,0.55) 100%),
+    url('images/eldoa-bg.jpg') center / cover no-repeat;
 }
 .eldoa__inner {
   position: relative; z-index: 1;
@@ -789,8 +790,9 @@ ul { list-style: none; }
 }
 .eldoa__bio {
   position: relative; padding: 48px;
-  background: var(--charcoal-light);
-  border: 1px solid rgba(255,255,255,0.05);
+  background: rgba(18,18,18,0.78);
+  border: 1px solid rgba(196,162,101,0.18);
+  backdrop-filter: blur(10px);
 }
 .eldoa__bio-avatar {
   width: 80px; height: 80px; border-radius: 50%;
